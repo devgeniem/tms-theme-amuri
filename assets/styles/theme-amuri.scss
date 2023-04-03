@@ -1,0 +1,111 @@
+/* !*
+ * Copyright (c) 2021. Geniem Oy
+ */
+
+@import "themes/includes";
+
+$primary: $color-amuri-creme;
+$primary-invert: $color-amuri-coffee;
+$primary-light: bulmaLighten($primary, 15);
+$primary-light-invert: $color-white;
+$primary-dark: $color-black;
+$primary-dark-invert: $color-white;
+
+$secondary: $white;
+$secondary-invert: $black;
+$secondary-light: $white;
+$secondary-light-invert: $black;
+$secondary-dark: $light;
+$secondary-dark-invert: $white;
+
+$accent: $color-amuri-yellow;
+$accent-invert: $black;
+$accent-light: $white;
+$accent-light-invert: $black;
+$accent-dark: $light;
+$accent-dark-invert: $white;
+
+$light: #f1eeeb;
+$light-invert: $black;
+$dark: $primary-dark;
+$dark-invert: $primary-dark-invert;
+$border-light: $color-tekstin-vari;
+
+$divider: $color-vaalean-harmaa;
+$divider-invert: $color-tumma-harmaa;
+
+$text: $color-tekstin-vari;
+$link: $color-amuri-dark-yellow;
+
+$colors-palette-primary: ($primary, $primary-invert, $primary-dark, $primary-light);
+$colors-palette-secondary: ($white, $black);
+
+$colors: (
+    "primary": $colors-palette-primary,
+    "secondary": $colors-palette-secondary,
+    "white": ($color-white, $color-black),
+    "black": ($color-black, $color-white),
+    "light": ($light, $light-invert),
+);
+
+$button-colors: (
+    "primary": ($black, $white, $black, $white),
+    "secondary": ($black, $color-white, $black, $color-white),
+);
+
+$color-background-primary-light--opaque-light: $secondary;
+$button-font-weight: $weight-semibold;
+$button-border-radius: 2rem;
+$button-text-invert: $color-white;
+$button-border-invert: $button-text-invert;
+$button-background-invert: $button-text-invert;
+
+$pill-color: $primary-invert;
+$pill-color-active: $primary-invert;
+$pill-color-active-hover: $primary;
+$pill-background-color: $primary;
+$pill-color-focus: $pill-color;
+$pill-background-color-focus: $pill-background-color;
+$pill-background-color-active: $primary-invert;
+$pill-border-color-hover: $primary;
+$pill-outlined-color: $black;
+
+$pagination-item-color: $black;
+$pagination-item-color-current: $white;
+$pagination-item-background-color: $color-amuri-yellow;
+$pagination-item-background-color-hover: $pagination-item-background-color;
+$pagination-item-background-color-focus: $pagination-item-background-color;
+
+$tms-breadcrumb-item-color-link: $link;
+
+$sibling-navigation-item-active-border-color: $border-light;
+$sibling-navigation-item-color: $white;
+$sibling-navigation-item-hover-color: $white;
+$sibling-navigation-item-background-color: $black;
+$sibling-navigation-item-active-color: $black;
+
+$secondary-navbar-item-font-weight: 400;
+$navbar-item-navbar-link-color: $color-amuri-coffee;
+$navbar-item-has-dropdown-active: $primary;
+$navbar-item-grid-item-border-color: $color-ui-border;
+$navbar-item-navbar-active-bg-color: $black;
+
+$fly-out-nav-trigger-icon: $color-amuri-coffee;
+$fly-out-nav-trigger-icon-hover: $color-amuri-dark-yellow;
+$fly-out-nav-primary-link: $color-amuri-coffee;
+$fly-out-nav-primary-link-hover: $color-amuri-coffee;
+$fly-out-nav-primary-dropdown-active-background: $primary;
+$fly-out-nav-secondary-border-color: $color-ui-border;
+$fly-out-nav-secondary-link: $fly-out-nav-primary-link;
+$fly-out-nav-secondary-link-hover: $fly-out-nav-primary-link-hover;
+$fly-out-nav-search-button-icon: currentColor;
+
+$duet-color-border: $color-vaalean-harmaa;
+
+@import "../../../tms-theme-base/assets/styles/main";
+@import "main";
+
+.objecfit-image {
+    object-fit: contain;
+    height: auto !important;
+}

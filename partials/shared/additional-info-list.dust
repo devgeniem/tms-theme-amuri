@@ -1,0 +1,13 @@
+<div class="additional-information-list {list_class|s}">
+    {#data}
+        {?additional_information_title}
+            {?additional_information_text}
+                <div class="columns is-gapless mb-3 mb-5-desktop">
+                    <div class="column">
+                        {>"shared/additional-info-row" title=additional_information_title text=additional_information_text /}
+                    </div>
+                </div>
+            {/additional_information_text}
+        {/additional_information_title}
+    {/data}
+</div>

@@ -1,0 +1,4 @@
+<div class="info-group__label h6 is-relative pt-3 pr-8 pb-3 pl-9 {template_classes.title|s}">
+    {title|s}
+    {>"ui/icon" class="icon--large is-absolute has-left-1 icon--xlarge is-accent" /}
+</div>

@@ -1,0 +1,14 @@
+.image-block {
+    &__caption {
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    .image {
+        img {
+            width: auto;
+            max-height: $image-max-height;
+        }
+    }
+}

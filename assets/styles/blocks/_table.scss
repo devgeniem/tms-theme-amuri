@@ -1,0 +1,29 @@
+.table {
+    background-color: $white;
+
+    thead,
+    tfoot {
+        th {
+            @extend h6;
+            font-weight: $weight-medium;
+        }
+    }
+}
+
+.tablepress {
+    .even td {
+        background-color: $color-amuri-green !important;
+    }
+
+    .odd td {
+        background-color: $white !important;
+    }
+}
+
+table.idc-element {
+    &:focus {
+        outline: 0.125rem dotted #000;
+        outline-offset: -0.125rem;
+        position: relative;
+    }
+}

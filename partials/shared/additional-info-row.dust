@@ -1,0 +1,15 @@
+<div class="has-border-bottom-1 has-border-gray--dark">
+    <div class="columns is-multiline is-gapless mb-3 mb-4-desktop">
+        <div class="column is-12 is-4-desktop">
+            <p class="info-row--title m-0 is-uppercase is-family-sans-serif has-text-primary">
+                {title|s}
+            </p>
+        </div>
+
+        <div class="column">
+            <p class="info-row--text m-0 ml-3-desktop">
+                {text|s}
+            </p>
+        </div>
+    </div>
+</div>

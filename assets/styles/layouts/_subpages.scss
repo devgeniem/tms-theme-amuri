@@ -1,0 +1,36 @@
+.subpages {
+    .post-link {
+        border: 1px solid $primary;
+
+        .icon {
+            fill: currentColor !important;
+        }
+
+        .h5 {
+            color: currentColor !important;
+            letter-spacing: .01em;
+            line-height: 141%;
+            text-transform: none;
+        }
+
+        &.has-background-coffee {
+            background-color: $primary-invert !important;
+            border: 1px solid $primary-invert;
+            color: $primary !important;
+        }
+
+        &.has-background-creme {
+            background-color: $primary !important;
+            border: 1px solid $primary;
+            color: $primary-invert !important;
+        }
+
+        &.has-background-image {
+            border: none !important;
+        }
+
+        &.has-text-primary-invert {
+            color: $primary !important;
+        }
+    }
+}

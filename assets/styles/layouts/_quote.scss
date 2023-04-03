@@ -1,0 +1,12 @@
+.quote {
+    &__content {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+
+    &__author {
+        letter-spacing: .06rem;
+        text-transform: none !important;
+    }
+}

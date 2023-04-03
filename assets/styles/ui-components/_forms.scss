@@ -1,0 +1,153 @@
+form {
+    
+    select,
+    input,
+    textarea {
+        border-color: $color-vaalean-harmaa;
+    }
+}
+
+select {
+    background-color: $primary-invert !important;
+    color: $primary !important;
+
+    @include until($desktop) {
+        font-size: 1em;
+    }
+}
+
+.container .gform_wrapper {
+    color: $primary-invert;
+
+    select,
+    input,
+    textarea {
+        border-radius: 0;
+        padding: 0.8rem !important;
+    }
+
+    button,
+    .button {
+        background-color: $primary !important;
+        color: $primary-invert !important;
+        border-color: $primary-invert !important;
+
+        &:hover,
+        &:focus {
+            color: $primary !important;
+            background-color: $primary-invert !important;
+        }
+    }
+
+    button[type="submit"],
+    .gform_button_select_files {
+        display: inline-flex;
+        justify-content: space-between;
+
+        &:after {
+            content: "";
+            width: 0.7rem;
+            height: 1rem;
+            display: block;
+            margin-left: 1rem;
+            background-color: $primary-invert;
+        }
+
+        &:hover,
+        &:focus {
+            &:after {
+                background-color: $primary;
+            }
+        }
+
+        &:active {
+            &:after {
+                background-color: $primary;
+            }
+        }
+    }
+
+    button[type="submit"] {
+
+        &:after { 
+            mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><path d="M2.13436 0L0.365646 1.76877L6.09688 7.5L0.365646 13.2312L2.13436 15L9.63436 7.5L2.13436 0Z"/></svg>');
+            mask-size: cover;
+            mask-repeat: no-repeat;
+            mask-position: center;
+        }
+    }
+
+
+    .gform_button_select_files {
+
+        &:after {
+            width: 1rem;
+            height: 1rem;
+            mask: url('data:image/svg+xml;utf8,<svg width="17" height="16" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg"><path d="M16.0623 9.06665H9.12891V16H6.99561V9.06665H0.0622559V6.93335H6.99561V0H9.12891V6.93335H16.0623V9.06665Z"/></svg>');
+            mask-size: cover;
+            mask-repeat: no-repeat;
+            mask-position: center;
+        }
+    }
+
+}
+
+.gfield_checkbox {
+
+    label {      
+        &::before {
+            margin-top: 0.25rem;
+        }
+    }
+}
+
+.gfield_label {
+    font-weight: 400 !important;
+}
+
+.gform_drop_area {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: 0.125rem dashed $black;
+}
+
+.gform_button_select_files,
+.gform_delete_file {
+
+    &:hover,
+    &:focus {
+        border-color: $primary-invert !important;
+        background-color: $primary !important;
+        color: $primary-invert !important;
+        outline: 0.125rem dotted $black !important;
+        outline-offset: 0.25rem !important;
+    }
+}
+
+.gform_delete_file {
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.ginput_preview {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    strong {
+        font-weight: 500;
+    }
+}
+
+.gform_validation_errors {
+    padding: 0.5rem 3rem !important;
+
+    h2 {
+        text-transform: none;
+        line-height: 1 !important;
+    }
+}

@@ -1,0 +1,38 @@
+<div {?anchor}id="{anchor|s}"{/anchor} class="call-to-action {accent_color|s}">
+    <div class="keep-vertical-spacing">
+      
+        {#rows}
+            <div class="call-to-action__item section is-flex is-justify-content-center pt-6 pb-6"{bg_style|s}>
+             <div class="container columns is-variable is-6 is-vcentered {container_class|s}">
+                {?image}
+                    <div class="column is-relative {img_column_class}">
+                        {>"shared/layout-after-main-content" /}
+                        <div class="image {image_class|s}">
+                            {@image id=image.id size="large" class="objectfit-image" /}
+                        </div>
+                        {>"shared/layout-before-main-content" /}
+                    </div>
+                {/image}
+
+                <div class="column {text_column_class|s}">
+                    {?title}
+                        <h2 class="call-to-action__title h4 mt-0 {txt_color_class|s}">
+                            {title|s}
+                        </h2>
+                    {/title}
+
+                    {?description}
+                        <div class="call-to-action__description mt-6 mb-6 {txt_color_class|s}">
+                            {description|s}
+                        </div>
+                    {/description}
+
+                    {>"ui/button-link" classes="is-primary" icon="chevron-right" icon_classes="icon--medium"  /}
+                </div>
+            </div>
+        </div>
+        {/rows}
+
+        
+    </div>
+</div>

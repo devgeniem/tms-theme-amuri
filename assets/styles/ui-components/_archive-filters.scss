@@ -1,0 +1,81 @@
+.archive {
+    .filters {
+        .h6 {
+            text-transform: none !important;
+        }
+
+        &--submit {
+            @include from($tablet) {
+                margin-top: auto;
+            }
+        }
+
+        .order-2 {
+            order: 2;
+        }
+
+        .align-items-end {
+            align-items: flex-end;
+        }
+
+        @include until($tablet) {
+            .column {
+                flex-wrap: wrap;
+            }
+        }
+    }
+
+    .filters-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: $theme-spacing;
+
+        @include from($tablet) {
+            flex-direction: row;
+            align-items: stretch;
+        }
+
+        select,
+        input[type="text"] {
+           height: 2.375rem;
+
+            @include from($tablet) {
+                height: 3rem;
+            }
+        }
+
+        select {
+            @include from($widescreen) {
+                min-width: 12.5rem;
+            }
+        }
+
+        input[type="text"] {
+            width: 100%;
+
+            @include from($widescreen) {
+                min-width: 17.5rem;
+            }
+        }
+    }
+}
+
+.archive-filters {
+    &__select-container {
+        display: flex;
+        flex-direction: column;
+        gap: $theme-spacing-oneandhalf;
+
+        @include until($tablet) {
+            width: 100%;
+        }
+
+        @include from($tablet) {
+            flex-direction: row;
+        }
+
+        select {
+            width: 100%;
+        }
+    }
+}

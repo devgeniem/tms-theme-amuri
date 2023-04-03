@@ -1,0 +1,13 @@
+.page-template-page-contacts {
+    .main-content {
+        input[type="text"] {
+            border-color: $color-gray !important;
+        }
+
+        button[type="submit"] {
+            .icon {
+                display: inline-block !important
+            }
+        }
+    }
+}

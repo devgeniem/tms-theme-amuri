@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="columns">
+        <div class="column is-8 is-offset-2 has-text-centered">
+            {?title}
+                <h2 class="layout-articles__title mt-0 mb-6 {txt_color_class|s}">
+                    {title|s}
+                </h2>
+            {/title}
+
+            {?description}
+                <div class="layout-articles__description mb-6 has-text-weight-semibold {txt_color_class|s}">
+                    {description|s}
+                </div>
+            {/description}
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    {?highlight}
+        {#highlight}
+            {>"views/home/home-highlight" category_link_classes="is-primary-invert" /}
+        {/highlight}
+    {/highlight}
+
+    {?posts}
+        <div class="columns is-multiline mt-8">
+            {#posts}
+                {>"views/home/home-grid-item" category_link_classes="is-primary-invert" /}
+            {/posts}
+        </div>
+    {/posts}
+
+    {?link.url}
+        {?link.title}
+            <div class="has-text-right">
+                <a href="{link.url}" target="{link.target}" class="is-inline-flex is-align-items-center {txt_color_class|s}">
+                        {>"ui/icon" icon="chevron-right" class="icon--small mr-2" /}
+                        <span>{link.title|s}</span>
+                        {?link.is_external}
+                            {>"ui/icon" icon="external" class="icon--medium is-primary ml-1" /}
+                        {/link.is_external}
+                    </a>
+            </div>
+            
+        {/link.title}
+    {/link.url}
+</div>

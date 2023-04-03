@@ -1,0 +1,67 @@
+<div class="columns is-multiline">
+    <div class="column">
+        <div class="pb-4 mb-4 mb-8-desktop has-border has-border-bottom-1 has-border-gray">
+            <div class="columns is-desktop filters">
+                {?filters}
+                    {@gt key=filters.length value=2}
+                        <div class="column {filters_container_classes|s}">
+                            <div class="mb-4">
+                                <h2 class="is-block h6 mb-3">
+                                    {strings.filter|s}
+                                </h2>
+
+                                <div class="filters__list">
+                                    {#filters}
+                                        <a href="{url}"
+                                        class="pill mr-2 mb-2 {?is_active}is-active{/is_active}">
+                                            {?is_active}
+                                                {>"ui/icon" icon="checkmark" class="icon--medium mr-2 is-primary-invert" /}
+                                            {/is_active}
+
+                                            {name|s}
+                                        </a>
+                                    {/filters}
+                                </div>
+                            </div>
+                        </div>
+                    {/gt}
+                {/filters}
+
+                <div class="column">
+                    <form class="filters--search pt-2 is-pulled-right-desktop" action="{search.action|s}" method="get"
+                          role="search">
+                        <div class="filters-wrapper">
+                            <div class="filters--text mb-2">
+                                <label for="filters-search" class="h6 is-block mb-3">
+                                    {strings.search.label|s}
+                                </label>
+
+                                <div class="filters--search-container">
+                                    <input id="filters-search"
+                                           class="p-2 pt-3-desktop pb-3-desktop has-text-small"
+                                           type="text" name="{search.input_search_name|s}"
+                                           value="{search.current_search|s}"
+                                           placeholder="{strings.search.input_placeholder|s}">
+                                </div>
+                            </div>
+
+                            <div class="filters--submit mb-2">
+                                <button class="button is-primary button--icon {class|s}"
+                                        type="submit">
+                                    {strings.search.submit_value|s}
+
+                                    {>"ui/icon" icon="search" class="icon--medium" /}
+                                </button>
+                            </div>
+
+                            {?active_filter_data}
+                                <input type="hidden" name="{active_filter_data.name|s}"
+                                       value="{active_filter_data.value|s}">
+                            {/active_filter_data}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

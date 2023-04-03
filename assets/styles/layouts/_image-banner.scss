@@ -1,0 +1,26 @@
+.image-banner {
+
+    @include tablet-only {
+        min-height: 315px;
+    }
+    .layout-badge {
+
+        @include from($desktop) {
+            top: 50%;
+        }
+        
+        &.align-before {    
+            @include from($desktop) {
+                left: 0;
+                transform: translateX(-30%) translateY(-50%);
+            }
+        }
+    
+        &.align-after {
+            @include from($desktop) {
+                right: 0;
+                transform: translateX(30%) translateY(-50%);
+            }
+        }
+    }
+}

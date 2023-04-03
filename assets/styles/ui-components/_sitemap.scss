@@ -1,0 +1,42 @@
+.sitemap{
+    &--wrapper {
+        @include mobile {
+            max-width: 90vw;
+        }
+    }
+    &--toggle {
+
+        margin-top: 0.44rem;
+
+        &.button.is-primary {
+            background-color: transparent !important;
+            &:active,
+            &:focus,
+            &.is-focused {
+                background-color: $black !important;
+
+                .icon {
+                    fill: $white !important;
+                }
+
+            }
+
+            .icon {
+                fill: $button-primary-border-color !important;
+            }
+
+            span.has-pointer-events-none {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+    ul {
+        @include mobile {
+            &.children {
+                padding-left: 1rem;
+            }
+        }
+    }
+}

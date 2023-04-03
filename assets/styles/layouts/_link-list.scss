@@ -1,0 +1,63 @@
+.link-list {
+    border: 1px solid $black;
+
+    &__title {
+        color: $black;
+        font-weight: $weight-medium;
+        letter-spacing: 0.01rem;
+        text-transform: none;
+        max-width: 12ch;
+
+        @include from(360px) {
+            max-width: 20ch;
+        }
+
+        @include from(400px) {
+            max-width: 25ch;
+        }
+
+        @include from(480px) {
+            max-width: 30ch;
+        }
+
+        @include from(540px) {
+            max-width: 35ch;
+        }
+
+        @include from($tablet) {
+            max-width: unset;
+        }
+    }
+
+    .icon {
+        color: inherit;
+        fill: currentColor !important;
+    }
+
+    .layout-badge {
+        top: -$theme-spacing;
+        left: unset;
+        right: -1.25rem;
+
+        @include from($tablet) {
+            right: 0;
+        }
+
+        @include from($desktop) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &.align-before {
+            @include from($desktop) {
+                left: -8.5rem;
+            }
+        }
+
+        &.align-after {
+            @include from($desktop) {
+                right: -8.5rem;
+            }
+        }
+    }
+}

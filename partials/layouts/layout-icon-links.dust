@@ -1,0 +1,32 @@
+<section {?anchor}id="{anchor|s}"{/anchor}
+         class="icon-links section pt-12 pb-7 has-background-primary-light--opaque-light has-text-centered">
+    <div class="container">
+        <div class="columns columns is-centered is-multiline has-background-primary has-border-primary-invert has-border-1">
+            <div class="column is-flex is-flex-direction-column has-height-100 p-6">
+                <div class="icon-links__grid">
+                    {#rows}
+                        <div class="icon-links__item mt-5 keep-vertical-spacing">
+                            {?icon}
+                                {>"ui/icon" class="icon--xxxlarge is-primary-invert mb-4 is-accent-invert" /}
+                            {/icon}
+
+                            {?title}
+                                <h2 class="h4 mt-0 mb-5">
+                                    {title|s}
+                                </h2>
+                            {/title}
+
+                            {?description}
+                                <div class="icon-links__item-description mb-5">
+                                    {description|s}
+                                </div>
+                            {/description}
+
+                            {>"ui/button-link" classes=button_classes icon="chevron-right" icon_classes="icon--medium" /}
+                        </div>
+                    {/rows}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

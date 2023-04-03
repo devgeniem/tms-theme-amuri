@@ -1,0 +1,69 @@
+// sass-lint:disable no-ids
+
+.section {
+    &--comments {
+        border: 0 !important;
+    }
+}
+
+.comments-area {
+    .comment {
+        &__body {
+            border: 1px solid $color-ui-border-light;
+        }
+
+        &__heading {
+            font-weight: $weight-medium !important;
+        }
+
+        &__content {
+            color: $black;
+        }
+
+        &__author-badge {
+            margin-left: $theme-spacing-quarter !important;
+            color: $black;
+            font-size: .95rem !important;
+            vertical-align: baseline;
+
+            &::before {
+                content: "/";
+                margin-right: $theme-spacing-quarter;
+            }
+
+            &::after {
+                content: "";
+            }
+        }
+    }
+
+    .comments {
+        &__form-container {
+            @include from($desktop) {
+                margin-top: $theme-spacing-four;
+            }
+        }
+    }
+
+    .comment-form-comment,
+    .comment-form-author,
+    .comment-form-email,
+    .comment-form-url {
+        input,
+        textarea {
+            padding: $theme-spacing-half;
+            border-radius: 0 !important;
+            border-color: $color-gray;
+        }
+    }
+}
+
+.comment-form {
+    label {
+        display: block;
+        margin-bottom: $theme-spacing-quarter;
+        color: $black;
+        font-size: 1.1rem !important;
+        font-weight: $weight-normal !important;
+    }
+}

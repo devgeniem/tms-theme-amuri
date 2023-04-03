@@ -1,0 +1,39 @@
+<div class="search__results">
+    <p class="mt-6 mb-7">
+        {results.summary|s}
+    </p>
+
+    {#results.posts}
+        <div class="search-item mb-6 p-6 p-8-desktop has-border-1 has-border-gray {template_classes.search_item|s}">
+            <div class="search-item__inner">
+                {?breadcrumbs}
+                    <div class="search-item__meta-container">
+                        {>"breadcrumbs" /}
+                    </div>
+                {/breadcrumbs}
+
+                {?meta}
+                    <div class="search-item__meta-container has-text-primary is-uppercase has-text-weight-medium">
+                        {>"views/search/search-item-meta"  /}
+                    </div>
+                {/meta}
+
+                <h2 class="h4 mt-4 mb-0 search-item__title">
+                    <a href="{permalink}" class="">
+                        {post_title|s}
+                    </a>
+                </h2>
+
+                {?post_excerpt}
+                    <p class="mt-4 mb-0 {template_classes.search_item_excerpt|s}">
+                        {post_excerpt|s}
+                    </p>
+                {/post_excerpt}
+            </div>
+        </div>
+    {/results.posts}
+
+    {?results.pagination}
+        {@pagination page=results.pagination.paged per_page=results.pagination.posts_per_page items=results.pagination.found_posts /}
+    {/results.pagination}
+</div>

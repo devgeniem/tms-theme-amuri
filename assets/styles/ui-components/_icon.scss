@@ -1,0 +1,6 @@
+.icon {
+    &.is-primary,
+    &.is-accent {
+        fill: $primary-invert !important;
+    }
+}

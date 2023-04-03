@@ -1,0 +1,19 @@
+.secondary-menu {
+    font-size: 1.1rem !important;
+
+    @include from($desktop) {
+        font-size: 1.25rem !important;
+    }
+
+    .menu-item-secondary {
+        @include from($desktop) {
+            margin-right: $theme-spacing !important;
+            margin-left: $theme-spacing !important;
+        }
+
+        &__link {
+            color: $white !important;
+            text-transform: none !important;
+        }
+    }
+}

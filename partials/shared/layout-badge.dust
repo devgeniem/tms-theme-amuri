@@ -1,0 +1,7 @@
+<div class="layout-badge {align|s} has-text-centered">
+    <div class="layout-badge__inner is-flex is-justify-content-center is-align-items-center has-border-primary has-border-1 {color_classes|s}">
+        <p class="layout-badge__text hyphenate pl-3 pr-3">
+            {text|s}
+        </p>
+    </div>
+</div>

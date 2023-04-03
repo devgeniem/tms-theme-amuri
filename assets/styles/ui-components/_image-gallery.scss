@@ -1,0 +1,76 @@
+.gallery-controls {
+    .gallery-button {
+        background-color: transparent !important;
+        border: 1px solid $white !important;
+
+        &:hover {
+            outline: none !important;
+        }
+
+        &:focus {
+            outline-offset: 0.25rem !important;
+            outline: .125rem dotted $white !important;
+        }
+
+        .icon {
+            fill: $white !important;
+        }
+    }
+}
+
+.modal-content {
+    strong {
+        color: $white;
+
+        &.is-block {
+            font-weight: 400;
+        }
+    }
+
+    a {
+        color: $white;
+        text-decoration: underline;
+
+        &:hover {
+            color: $white !important;
+        }
+
+        &:focus {
+            outline-color: $white !important;
+        }
+    }
+
+    .slide-deck,
+    .slide-deck .slide {
+        figure {
+            width: fit-content;
+            margin-left: auto !important;
+            margin-right: auto !important;
+
+            figcaption {
+                margin-top: 0;
+
+                p {
+                    max-width: fit-content;
+                }
+            }
+        }
+    }
+}
+
+.button.modal-close-button {
+    &:hover {
+        outline: none !important;
+    }
+
+    &:hover,
+    &:focus {
+        .icon {
+            fill: $black !important;
+        }
+    }
+
+    &:focus {
+        outline: .125rem dotted $white !important;
+    }
+}

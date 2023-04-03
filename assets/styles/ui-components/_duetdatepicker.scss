@@ -1,0 +1,13 @@
+.duet-date {
+    &__row {
+        span {
+            font-family: 'Open Sans', sans-serif;
+        }
+    }
+
+    &__toggle {
+        svg {
+            color: $color-amuri-dark-yellow !important;
+        }
+    }
+}

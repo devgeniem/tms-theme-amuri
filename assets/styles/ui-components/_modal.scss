@@ -1,0 +1,118 @@
+.modal {
+    .modal-close-button {
+        background-color: $white !important;
+        color: $black !important;
+        .icon {
+            fill: $black !important;
+        }
+        &:focus {
+            outline: 0.125rem dotted $white !important;
+            outline-offset: 0.25rem !important;
+            color: $primary !important; // sass-lint:disable-line no-important
+            .icon {
+                fill: $primary !important; // sass-lint:disable-line no-important
+            }
+        }
+        &:hover{
+            background-color: $black !important;
+            color: $white !important;
+            outline: 0;
+            .icon {
+                fill: $white !important;
+            }
+        }
+    }
+
+    &--slider {
+        .modal-close-button {
+            @include from($tablet) {
+                top: $theme-spacing-two;
+            }
+        }
+    }
+
+    .slick-arrow {
+        .icon {
+            fill: $white !important; // sass-lint:disable-line no-important
+        }
+        &:hover {
+            background-color: $white;
+            .icon {
+                fill: $black !important; // sass-lint:disable-line no-important
+            }
+        }
+        &:focus {
+            outline: 0.125rem dotted $white !important;
+            outline-offset: 0.25rem !important;
+        }
+
+    }
+}
+
+.modal-content {
+
+    a {
+        color: $white;
+        text-decoration: underline;
+
+        &:hover {
+            color: $white !important;
+        }
+
+        &:focus {
+            outline-color: $white !important;
+        }
+    }
+}
+
+.modal--slider {
+
+    .modal-content {
+
+        p a {
+            color: $white;
+            text-decoration: underline;
+
+            &:hover {
+                color: $white !important;
+            }
+
+            &:focus {
+                outline-color: $white !important;
+            }
+        }
+
+        strong {
+            font-weight: 400;
+        }
+
+        .slick-slide {
+            padding: 0.588rem;
+        }
+
+        .slick-current {
+            &:focus {
+                .image-carousel__item {
+                    outline: 0.125rem dotted #fff;
+                    outline-offset: 0.25rem;
+                }
+            }
+        }
+
+    }
+}
+
+.modaal-close {
+
+    &:focus:before,
+    &:focus:after,
+    &:hover:before,
+    &:hover:after {
+        background: $black;
+    }
+
+    &:focus {
+        outline: 0.25rem dotted $white;
+        outline-offset: 0.25rem
+    }
+}

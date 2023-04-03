@@ -1,0 +1,115 @@
+.site-header__nav {
+    border-top: 1px solid $color-vaalean-harmaa;
+    border-bottom: 0 !important;
+
+    > .container {
+        max-width: 1480px !important;
+        width: 90%;
+    }
+}
+
+.primary-nav {
+    justify-content: flex-start;
+
+    > li {
+        @include from($desktop) {
+            padding-bottom: 0 !important;
+        }
+    }
+
+    > .navbar-item,
+    > .has-dropdown > div > .navbar-link {
+        font-weight: $weight-normal !important;
+        color: $navbar-item-navbar-link-color !important;
+        letter-spacing: .05rem;
+
+        @include from($desktop) {
+            font-size: 1.5rem !important;
+        }
+
+        &:hover,
+        &:focus {
+            color: $navbar-item-navbar-link-color !important;
+        }
+
+        &.current-menu-item,
+        &.current-menu-parent {
+            background-color: $color-amuri-coffee !important;
+
+            &,
+            &:hover,
+            &:focus {
+                color: $color-amuri-creme !important;
+            }
+
+            .navbar-dropdown-control {
+                color: $color-amuri-creme !important;
+
+                > a {
+                    &,
+                    &:hover,
+                    &:focus {
+                        color: $color-amuri-creme !important;
+                    }
+                }
+            }
+        }
+    }
+
+    > .has-dropdown > div > .navbar-link {
+        padding-left: 0;
+    }
+
+    > .has-dropdown.current-menu-item.is-active > div > a.navbar-link,
+    > .has-dropdown.current-menu-item:hover > div > a.navbar-link,
+    > .has-dropdown.current-menu-item > div > a.navbar-link {
+        color: $primary !important;
+    }
+
+    > .has-dropdown:not(.current-menu-item).is-active > div > a.navbar-link,
+    > .has-dropdown:not(.current-menu-item):hover > div > a.navbar-link {
+        color: $primary-invert !important;
+    }
+
+    .navbar-dropdown {
+        border-top: none !important;
+        background-color: $color-amuri-creme !important;
+
+        @include from($desktop) {
+            padding-top: $theme-spacing-two !important;
+            padding-bottom: $theme-spacing-three !important;
+        }
+
+        a {
+            font-family: $family-primary;
+            color: $primary-invert !important;
+            font-size: 1rem !important;
+
+        }
+
+
+        &__parent-link {
+            display: none !important;
+        }
+    }
+
+    li {
+        text-decoration: none !important;
+    }
+
+    .icon {
+        fill: currentColor !important;
+    }
+
+    .navbar-dropdown-items {
+        .navbar-item {
+            background-color: transparent !important;
+            font-weight: $weight-medium;
+
+            .icon {
+                width: $theme-spacing-half !important;
+                height: $theme-spacing-half !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,141 @@
+// stylelint-disable declaration-no-important
+
+$button-primary-border-color: $primary;
+$button-secondary-border-color: $button-primary-border-color;
+
+
+.button {
+    font-size: 1.15rem !important;
+    font-weight: 400 !important;
+    letter-spacing: .06rem !important;
+    text-transform: uppercase;
+    padding: .5rem 1.5rem;
+    border-color: transparent !important;
+    // box-shadow: 1px 1px 8px 0 bulmaLighten($primary-invert, 50);
+    color: $primary;
+    background-color: $primary-invert;
+
+    &:hover,
+    &.is-hovered,
+    &:focus,
+    &.is-focused {
+        box-shadow: 0 .125rem .375rem rgba(0, 0, 0, .15);
+        background-color: $primary !important;
+        color: $primary-invert !important;
+        border-color: $primary-invert !important;
+
+        &:active {
+            background-color: $primary-invert !important;
+            color: $primary !important;
+            text-decoration: underline !important;
+            outline: none !important;
+
+            .icon {
+                fill: currentColor !important;
+            }
+        }
+    }
+
+    .icon {
+        fill: currentColor !important;
+        color: inherit;
+    }
+
+    &:focus,
+    &.is-focused {
+        border-color: $button-primary-border-color !important;
+        outline: .125rem dotted $black !important;
+        outline-offset: .25rem !important;
+    }
+
+    &.is-primary {
+        background-color: $primary !important;
+        color: $primary-invert !important;
+        border-color: $primary-invert !important;
+
+        &:hover,
+        &:focus {
+            color: $primary !important;
+            background-color: $primary-invert !important;
+            border-color: $primary-invert !important;
+
+            .icon {
+                fill: $primary !important;
+            }
+        }
+
+        &.is-outlined {
+            &:hover,
+            &:focus {
+                border-color: $primary-invert !important;
+            }
+        }
+
+        .icon {
+            fill: $primary-invert !important;
+        }
+    }
+
+    &.is-primary.is-inverted,
+    &.is-primary-invert {
+        border-color: $primary !important;
+        background-color: $primary-invert !important;
+        color: $primary !important;
+
+        .icon {
+            fill: currentColor !important;
+            color: inherit;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $link-hover !important;
+
+            .icon {
+                fill: currentColor !important;
+                color: inherit;
+            }
+        }
+
+        &:active,
+        &.is-active {
+            background-color: $primary !important;
+            color: $primary-invert !important;
+            border-color: $primary-invert !important;
+        }
+    }
+
+    &.is-secondary {
+        background-color: $primary-invert !important;
+        color: $primary !important;
+
+        .icon {
+            fill: currentColor !important;
+        }
+
+        &:hover,
+        &.is-hovered,
+        &:focus,
+        &.is-focused {
+            border-color: $primary-invert !important;
+            background-color: $primary !important;
+            color: $primary-invert !important;
+
+            .icon {
+                fill: currentColor !important;
+            }
+        }
+    }
+
+    &.is-outlined {
+        border-color: $primary-invert !important;
+        background-color: transparent !important;
+        color: $primary-invert !important;
+
+        &:hover,
+        &:focus {
+            background-color: $primary-invert !important;
+            color: $primary !important;
+        }
+    }
+}

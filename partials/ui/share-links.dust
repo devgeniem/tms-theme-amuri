@@ -1,0 +1,19 @@
+{?share_links}
+    <ul class="share-links is-flex is-flex-wrap-wrap is-unstyled {ul_class|s}">
+        {#share_links}
+            <li class="mb-4 {li_class|s}">
+                <a href="{link}"
+                   class="is-relative is-flex is-align-items-center is-justify-content-center box box--medium box--circle {share_link_classes.link|s} {#extra_classes}{.} {/extra_classes}"
+                   data-callback-text="{callback_text|s}">
+                    <span class="is-sr-only">{sr_text|s}</span>
+                    {>"ui/icon" class="icon--xlarge is-primary-invert {share_link_classes.icon|s}" /}
+
+
+                    {?callback_text}
+                        <div class="js-callback-container is-absolute has-top-100 pt-2 is-size-7 has-text-centered is-hidden"></div>
+                    {/callback_text}
+                </a>
+            </li>
+        {/share_links}
+    </ul>
+{/share_links}

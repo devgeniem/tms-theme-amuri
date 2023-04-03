@@ -1,0 +1,36 @@
+.accordion {
+    &__row {
+        border-color: $black;
+        border-radius: 0;
+
+        &:hover {
+            border-color: $black;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, .125);
+            transition: box-shadow $easing $speed;
+        }
+    }
+
+    &__row-title-text.h6 {
+        font-size: 1.25rem !important;
+        color: $black !important;
+    }
+
+    &__title-icon {
+        .icon {
+            fill: $black !important;
+        }
+    }
+
+    &__content {
+        .wysiwyg a {
+            text-decoration: underline;
+        }
+    }
+
+    .image {
+        img {
+            width: auto;
+            max-height: $image-max-height;
+        }
+    }
+}

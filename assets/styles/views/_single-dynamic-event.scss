@@ -1,0 +1,9 @@
+.single-dynamic-event-cpt {
+    .entry {
+        &__hero {
+            h1 {
+                color: $primary-invert !important;
+            }
+        }
+    }
+}

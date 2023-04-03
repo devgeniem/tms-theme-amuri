@@ -1,0 +1,30 @@
+<form action="{form.search_link}" class="search__form is-relative">
+    <div class="section pt-4 pb-4">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8 is-5-desktop mr-auto ml-auto">
+                    <div class="search-input-container mt-4 mb-4">
+                        <div class="has-text-centered">
+                            <div class="has-text-left">
+                                <label for="search-input" class="is-block h6 mb-3">
+                                    {Strings.s.header.search}
+                                </label>
+                                <input type="text" name="s" id="search-input" value="{form.search_term|s}"
+                                       class="search__term pt-3 pr-2 pb-3 pl-2 p-4-desktop has-border-1 has-border-gray"
+                                       autocomplete="off">
+                            </div>
+
+                            <div>
+                                <button type="submit"
+                                        class="search__button button button--icon is-primary mt-4">
+                                    {Strings.s.header.search|s}
+                                    {>"ui/icon" icon="search" class="icon--large"  /}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

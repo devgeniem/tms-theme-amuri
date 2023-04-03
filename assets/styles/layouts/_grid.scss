@@ -1,0 +1,14 @@
+/*!*
+ * Copyright (c) 2021. Geniem Oy
+ */
+
+ .grid {
+    &__item {
+
+        @include from($tablet) {
+            &__details p { 
+                -webkit-line-clamp: 7;
+            }
+        }
+    }
+ }

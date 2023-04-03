@@ -1,0 +1,35 @@
+.single-blog-article {
+    .entry {
+        &__share-links {
+            h2 {
+                text-align: left !important;
+            }
+
+            .share-links {
+                justify-content: flex-start !important;
+            }
+        }
+    }
+
+    .entry {
+        &__blog-info-container {
+            background-color: $primary;
+
+            .button-toggle {
+                margin: $theme-spacing 0 !important;
+                color: $link;
+                font-size: 1.1rem !important;
+                text-decoration: underline !important;
+            }
+        }
+
+        &__blog-author-text {
+            .h5 {
+                font-size: 1.35rem !important;
+                font-weight: $weight-bold;
+                letter-spacing: .02rem !important;
+                line-height: 139%;
+            }
+        }
+    }
+}

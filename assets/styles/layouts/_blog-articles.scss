@@ -1,0 +1,14 @@
+.layout-articles {
+    &__read-more {
+        color: $primary !important;
+        font-size: 1.2rem;
+        font-family: $family-secondary;
+        font-weight: $weight-normal !important;
+        text-transform: uppercase;
+        letter-spacing: .06rem;
+
+        .icon {
+            vertical-align: middle;
+        }
+    }
+}

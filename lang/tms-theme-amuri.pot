@@ -1,0 +1,262 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TMS Theme Amuri\n"
+"POT-Creation-Date: 2023-01-28 22:42+0200\n"
+"PO-Revision-Date: 2022-01-12 16:20+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+
+#: lib/PostType/Artist.php:56 lib/PostType/Artist.php:98
+msgctxt "theme CPT"
+msgid "Artists"
+msgstr ""
+
+#: lib/PostType/Artist.php:189 lib/PostType/Artwork.php:209
+#: lib/PostType/Exhibition.php:197
+msgctxt "Breadcrumbs"
+msgid "Home"
+msgstr ""
+
+#: lib/PostType/Artwork.php:56 lib/PostType/Artwork.php:115
+msgctxt "theme CPT"
+msgid "Artwork"
+msgstr ""
+
+#: lib/PostType/Exhibition.php:56 lib/PostType/Exhibition.php:97
+msgctxt "theme CPT"
+msgid "Exhibition"
+msgstr ""
+
+#: lib/PostType/Exhibition.php:202
+msgctxt "Breadcrumb text"
+msgid "Exhibition"
+msgstr ""
+
+#: lib/ThemeCustomizationController.php:123
+msgid "Send Comment"
+msgstr ""
+
+#: models/archive-exhibition.php:161
+msgid "Search from archive"
+msgstr ""
+
+#: models/archive-exhibition.php:162 models/page-artist.php:167
+#: models/page-artwork.php:65
+msgid "Search"
+msgstr ""
+
+#: models/archive-exhibition.php:163
+msgid "Type a search word"
+msgstr ""
+
+#: models/archive-exhibition.php:165 models/page-artist.php:173
+#: models/page-artwork.php:71
+msgid "No results"
+msgstr ""
+
+#: models/archive-exhibition.php:166
+msgid "Year"
+msgstr ""
+
+#: models/archive-exhibition.php:167
+msgid "Selecting the year filter limits the exhibition view."
+msgstr ""
+
+#: models/archive-exhibition.php:168
+msgid "Upcoming"
+msgstr ""
+
+#: models/archive-exhibition.php:261
+msgid "Upcoming exhibitions"
+msgstr ""
+
+#: models/archive-exhibition.php:270
+msgid "Current exhibitions"
+msgstr ""
+
+#: models/archive-exhibition.php:275
+msgid "Past exhibitions"
+msgstr ""
+
+#: models/archive-exhibition.php:347
+msgid "Filter by year"
+msgstr ""
+
+#: models/archive-exhibition.php:579 models/page-artist.php:406
+#, php-format
+msgctxt "filter with search clause results summary"
+msgid "%1$1s result found for \"%2$2s\""
+msgid_plural "%1$1s results found for \"%2$2s\""
+msgstr[0] ""
+msgstr[1] ""
+
+#: models/archive-exhibition.php:593 models/page-artist.php:420
+#, php-format
+msgctxt "filter results summary"
+msgid "%1$1s result found"
+msgid_plural "%1$1s results found"
+msgstr[0] ""
+msgstr[1] ""
+
+#: models/page-artist.php:166
+msgid "Search for artist"
+msgstr ""
+
+#: models/page-artist.php:168 models/page-artwork.php:66
+msgid "Search query"
+msgstr ""
+
+#: models/page-artist.php:171 models/page-artwork.php:69
+msgid "Show All"
+msgstr ""
+
+#: models/page-artist.php:174 models/page-artwork.php:72
+msgid "Filter"
+msgstr ""
+
+#: models/page-artist.php:175 models/page-artwork.php:73
+msgid "Sort"
+msgstr ""
+
+#: models/page-artist.php:176 models/page-artwork.php:74
+msgid "Categories"
+msgstr ""
+
+#: models/page-artist.php:240 models/page-artwork.php:141
+msgid "All"
+msgstr ""
+
+#: models/page-artist.php:259
+msgid "Name"
+msgstr ""
+
+#: models/page-artist.php:263
+msgid "Name, descending"
+msgstr ""
+
+#: models/page-artist.php:267
+msgid "Young artist of the year ascending"
+msgstr ""
+
+#: models/page-artist.php:271
+msgid "Young artist of the year descending"
+msgstr ""
+
+#: models/page-artist.php:366 models/single-artwork.php:245
+msgid "View artist"
+msgstr ""
+
+#: models/page-artwork.php:64
+msgid "Search for artwork"
+msgstr ""
+
+#. translators: Year number
+#: models/single-artist.php:41
+#, php-format
+msgid "The Young Artist of the Year %s"
+msgstr ""
+
+#: models/single-artist.php:63
+msgid "Death year"
+msgstr ""
+
+#: models/single-artist.php:72
+msgid "Birth year"
+msgstr ""
+
+#: models/single-artist.php:141
+msgid "Related art"
+msgstr ""
+
+#: models/single-artwork.php:102
+msgctxt "theme-frontend"
+msgid "Location"
+msgstr ""
+
+#: models/single-artwork.php:134
+msgctxt "theme-frontend"
+msgid "Artists"
+msgstr ""
+
+#: models/single-artwork.php:135
+msgctxt "theme-frontend"
+msgid "Artist"
+msgstr ""
+
+#: models/single-artwork.php:153
+msgid "Year of manufacture"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Field/FlexibleContent.php:67
+#: wp-content/mu-plugins/acf-codifier/src/Field/Repeater.php:60
+msgid "Add Row"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisitePostObject.php:24
+msgid "Multisite Post Object"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisiteRelationship.php:24
+msgid "Multisite Relationship"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisiteTaxonomy.php:23
+msgid "Multisite taxonomy"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/Multitaxonomy.php:23
+msgid "Multitaxonomy"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/Multitaxonomy.php:516
+#, php-format
+msgctxt "No terms"
+msgid "No %s"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:18
+msgid "PHP"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:48
+msgid "Instructions"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:50
+msgid ""
+"This field can only be used with ACF Codifier. Doesn't do anything if "
+"defined in the admin side."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "TMS Theme Amuri"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Tampere Multisite Amuri Theme"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Geniem"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://geniem.fi"
+msgstr ""

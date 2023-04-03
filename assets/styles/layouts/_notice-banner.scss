@@ -1,0 +1,39 @@
+.site-header-notice,
+.notice-banner {
+    .notice-banner__content {
+        a {
+            font-weight: $weight-normal !important;
+        }
+    }
+
+    h2 {
+        color: currentColor;
+    }
+
+    &.has-background-primary {
+        background-color: $primary !important;
+        color: $primary-invert !important;
+    }
+
+    &.has-background-secondary {
+        border: 1px solid $primary-invert;
+    }
+
+    .icon {
+        fill: currentColor !important;
+    }
+}
+
+.notice-banner {
+    &.has-background-primary {
+        .icon.is-large {
+            fill: $primary-invert !important;
+        }
+    }
+
+    &.has-background-secondary {
+        .icon.is-large {
+            fill: $color-amuri-dark-yellow !important;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+<div class="archive-filters columns mt-6">
+    <div class="column is-8">
+        {?filters.categories}
+            <div class="h6 mb-4">
+                {Strings.s.home.filter_by_category|s}
+            </div>
+
+            <div>
+                {#filters.categories}
+                    <a href="{url}"
+                    class="pill mr-2 mb-2 {^is_active}is-primary-invert{/is_active}">
+                        {?is_active}
+                            {>"ui/icon" icon="checkmark" class="icon--medium mr-2 is-primary-invert" /}
+                        {/is_active}
+
+                        {name|s}
+                    </a>
+                {/filters.categories}
+            </div>
+        {/filters.categories}
+    </div>
+
+    <div class="column is-4">
+        <form action="" method="get" class="is-flex is-justify-content-flex-end archive-filters__form">
+            {?filters.active_category}
+                <input name="filter-category" type="hidden" value="{filters.active_category|s}">
+            {/filters.active_category}
+
+            <div class="archive-filters__select-container">
+                <div class="archive-filters__dropdown-item">
+                    <label for="filter-year" class="is-block h6 mb-4">
+                        {Strings.s.home.year|s}
+                    </label>
+
+                    <select name="filter-year" id="filter-year"
+                            class="js-trigger-form-submit p-2 has-background-invert has-border-radius-small has-border-gray has-border-1">
+                        <option value="">{Strings.s.common.all|s}</option>
+
+                        {#filters.years}
+                            <option value="{key}" {is_selected|s}>
+                                {name|s}
+                            </option>
+                        {/filters.years}
+                    </select>
+                </div>
+
+                <div class="archive-filters__dropdown-item">
+                    <label for="filter-month" class="is-block h6 mb-4">
+                        {Strings.s.home.month|s}
+                    </label>
+
+                    <select name="filter-month" id="filter-month"
+                            class="js-trigger-form-submit p-2 has-border-radius-small has-border-gray has-border-1">
+                        <option value="">{Strings.s.common.all|s}</option>
+                        {#filters.months}
+                            <option value="{key}" {is_selected|s}>
+                                {name|s}
+                            </option>
+                        {/filters.months}
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
