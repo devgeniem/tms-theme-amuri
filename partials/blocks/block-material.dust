@@ -22,14 +22,14 @@
                         <div class="is-flex is-flex-wrap-wrap">
                             <div class="has-width-100-until-tablet">
                                 <a href="{url}"
-                                   class="has-text-large is-inline-flex is-align-items-center has-text-weight-semibold is-family-secondary {title_classes|s}"
+                                   class="has-text-large is-inline-flex is-align-items-center has-text-weight-semibold {title_classes|s}"
                                    download>
                                     {title|s}
                                     {>"ui/icon" icon="chevron-right" class="ml-2 icon--medium" /}
                                 </a>
 
                                 <div
-                                    class="mt-1 has-text-gray has-line-height-tight is-family-secondary has-text-weight-medium has-divider-x-1 has-divider-x-1">
+                                    class="mt-1 has-text-gray has-line-height-tight has-text-weight-medium has-divider-x-1 has-divider-x-1">
                                     <span class="is-inline-block pr-3 is-uppercase">{filetype}</span>
                                     <span class="is-inline-block ml-2">{filesize|s}</span>
                                 </div>

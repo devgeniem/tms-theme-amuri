@@ -25,7 +25,7 @@
             {short_description|s}
         </p>
 
-        <div class="events__meta is-flex is-family-secondary is-align-items-center">
+        <div class="events__meta is-flex is-align-items-center">
             <span class="is-flex" aria-label="{Strings.s.event.date|s}">
                 {>"ui/icon" icon="date" class="icon--large is-primary mr-2 {item_classes.grid.icon|s}" /}
             </span>
@@ -33,7 +33,7 @@
             {date|s}
         </div>
 
-        <div class="events__meta is-flex is-family-secondary is-align-items-center">
+        <div class="events__meta is-flex is-align-items-center">
             <span class="is-flex" aria-label="{Strings.s.event.time|s}">
                 {>"ui/icon" icon="time" class="icon--large is-primary mr-2 {item_classes.grid.icon|s}" /}
             </span>
@@ -42,7 +42,7 @@
         </div>
 
         {?location.name}
-            <div class="events__meta is-flex is-family-secondary is-align-items-center">
+            <div class="events__meta is-flex is-align-items-center">
                 <span class="is-flex" aria-label="{Strings.s.event.location|s}">
                     {>"ui/icon" icon=location_icon class="icon--large is-primary mr-2 {item_classes.grid.icon|s}" /}
                 </span>

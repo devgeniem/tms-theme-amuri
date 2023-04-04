@@ -10,6 +10,7 @@
 
 .primary-nav {
     justify-content: flex-start;
+    font-family: $family-primary !important;
 
     > li {
         @include from($desktop) {
@@ -81,7 +82,7 @@
         }
 
         a {
-            font-family: $family-primary;
+            font-family: $family-primary !important;
             color: $primary-invert !important;
             font-size: 1rem !important;
 
