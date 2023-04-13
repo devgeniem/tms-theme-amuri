@@ -16,35 +16,35 @@ class AlterComponents {
      * Constructor
      */
     public function __construct() {
-        add_filter(
+        \add_filter(
             'tms/acf/field/fg_onepager_components_components/layouts',
             [ $this, 'add_html_layout' ],
             10,
             2
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/field/fg_page_components_components/layouts',
             [ $this, 'add_html_layout' ],
             10,
             2
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/field/fg_front_page_components_components/layouts',
             [ $this, 'add_html_layout' ],
             10,
             2
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/field/fg_post_fields_components/layouts',
             [ $this, 'add_html_layout' ],
             10,
             2
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/field/fg_dynamic_event_fields_components/layouts',
             [ $this, 'add_html_layout' ],
             10,

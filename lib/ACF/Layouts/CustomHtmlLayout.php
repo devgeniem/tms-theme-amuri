@@ -52,7 +52,7 @@ class CustomHtmlLayout extends Layout {
             ],
         ];
 
-        if ( user_can( get_current_user_id(), 'unfiltered_html' ) ) {
+        if ( \user_can( \get_current_user_id(), 'unfiltered_html' )  || ! \is_admin() ) {
             $html_field = ( new Field\Textarea( $strings['html']['label'] ) )
                 ->set_key( "{$key}_html" )
                 ->set_name( 'html' )
