@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [1.0.0] - 2023-04-03
+## [0.2.0] - 2023-04-04
+
+- TMS-947: Theme style fixes and custom html-component added
+
+## [0.1.1] - 2023-04-04
+
+- Add PHP 7.4 to composer
+
+## [0.1.0] - 2023-04-03
 
 - TMS-947: Modify Amuri theme to suit Amuri website
