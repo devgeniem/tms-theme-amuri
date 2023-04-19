@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.2.1] - 2023-04-19
+
+- Fix ACF-block background-colors
+
 ## [0.2.0] - 2023-04-04
 
 - TMS-947: Theme style fixes and custom html-component added
