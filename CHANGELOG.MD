@@ -7,11 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.0] - 2023-04-19
+- TMS-947: Single event page style changes
+
 ## [0.2.1] - 2023-04-19
 
 - Fix ACF-block background-colors
 
-## [0.2.0] - 2023-04-04
+## [0.2.0] - 2023-04-18
 
 - TMS-947: Theme style fixes and custom html-component added
 
