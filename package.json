@@ -20,7 +20,7 @@
     "micromodal": "^0.4.10",
     "modaal": "^0.4.4",
     "normalize.css": "^8.0.1",
-    "sass": "^1.49.7",
+    "sass": "^1.62.1",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
