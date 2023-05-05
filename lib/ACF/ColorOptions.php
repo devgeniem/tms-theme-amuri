@@ -96,7 +96,7 @@ class ColorOptions {
             ],
             'background_color' => [
                 'label'        => 'Taustaväri',
-                'instructions' => 'Valitse tai syötä taustan väri',
+                'instructions' => 'Valitse taustan väri',
             ],
         ];
 
@@ -105,10 +105,17 @@ class ColorOptions {
                 ->set_key( "${key}_color_options" )
                 ->set_name( 'color_options' );
 
-            $bg_color_field = ( new Field\Color( $strings['background_color']['label'] ) )
+            $bg_color_field = ( new Field\Select( $strings['background_color']['label'] ) )
                 ->set_key( "${key}_color_options_bg_color" )
                 ->set_name( 'bg_color' )
-                ->set_wrapper_width( 60 )
+                ->set_choices( [
+                    'white'          => 'Valkoinen',
+                    'primary-invert' => 'Kahvinruskea',
+                    'primary'        => 'Kermankeltainen',
+                    'yellow'         => 'Keltainen',
+                ] )
+                ->set_default_value( 'white' )
+                ->set_wrapper_width( 50 )
                 ->set_instructions( $strings['background_color']['instructions'] );
 
             $text_color_field = ( new Field\Select( $strings['text_color']['label'] ) )
@@ -118,8 +125,8 @@ class ColorOptions {
                     'coffee' => 'Kahvinruskea',
                     'creme'  => 'Kermankeltainen',
                 ] )
-                ->set_default_value( 'black' )
-                ->set_wrapper_width( 20 )
+                ->set_default_value( 'coffee' )
+                ->set_wrapper_width( 50 )
                 ->set_instructions( $strings['text_color']['instructions'] );
 
                 $group->add_fields( [ $bg_color_field, $text_color_field ] );
@@ -177,7 +184,7 @@ class ColorOptions {
 
                     if ( ! empty( $row['color_options']['bg_color'] ) ) {
                         $bg_color                           = $row['color_options']['bg_color'];
-                        $layout['rows'][ $key ]['bg_style'] = sprintf( 'style="background-color:%s;"', $bg_color );
+                        $layout['rows'][ $key ]['bg_style'] = sprintf( 'has-background-%s', $bg_color );
                     }
 
                     if ( ! empty( $row['color_options']['text_color'] ) ) {
@@ -193,7 +200,7 @@ class ColorOptions {
 
                 if ( ! empty( $layout['color_options']['bg_color'] ) ) {
                     $bg_color           = $layout['color_options']['bg_color'];
-                    $layout['bg_style'] = sprintf( 'style="background-color:%s;"', $bg_color );
+                    $layout['bg_style'] = sprintf( 'has-background-%s', $bg_color );
                 }
 
                 if ( ! empty( $layout['color_options']['text_color'] ) ) {
