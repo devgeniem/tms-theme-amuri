@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.0] - 2023-05-05
+- TMS-952: Change background-colors color-field type to select with predefined choices  on components
+- TMS-952: Replace content-column components textarea with wysiwyg & and add a button-field
+- TMS-952: Add second contact-info fields to footer
+
 ## [1.0.0] - 2023-04-19
 - TMS-947: Single event page style changes
 

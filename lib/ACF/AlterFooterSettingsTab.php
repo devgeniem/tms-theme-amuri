@@ -22,8 +22,8 @@ class AlterFooterSettingsTab {
     /**
      * Add fields to footer-tab in site settings
      *
-     * @param array $fields Array of ACF fields.
-     * @param string $key   Layout key.
+     * @param array  $fields Array of ACF fields.
+     * @param string $key    Layout key.
      *
      * @return array
      */
@@ -32,7 +32,8 @@ class AlterFooterSettingsTab {
         $strings = [
             'second_contact_title' => [
                 'title'        => 'Toisen yhteystiedon otsikko',
-                'instructions' => 'Toinen yhteystieto-osio näytetään alatunnisteen vasemmassa reunassa, ensimmäisten yhteystieto-kenttien vieressä',
+                'instructions' => 'Toinen yhteystieto-osio näytetään alatunnisteen vasemmassa reunassa, 
+                ensimmäisten yhteystieto-kenttien vieressä',
             ],
             'second_address' => [
                 'title'        => 'Toisen yhteystiedon osoite',

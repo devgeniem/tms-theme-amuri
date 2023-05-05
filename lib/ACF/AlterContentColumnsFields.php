@@ -23,8 +23,8 @@ class AlterContentColumnsFields {
     /**
      * Alter fields
      *
-     * @param array $fields Array of ACF fields.
-     * @param string $key   Layout key.
+     * @param array  $fields Array of ACF fields.
+     * @param string $key    Layout key.
      *
      * @return array
      */
