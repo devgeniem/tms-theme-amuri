@@ -79,7 +79,7 @@ class AlterFooterSettingsTab {
                     $second_contact_title,
                     $second_address,
                     $second_email,
-                    $second_phone
+                    $second_phone,
                 ] );
             }
         }
