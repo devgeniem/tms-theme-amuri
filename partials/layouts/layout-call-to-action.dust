@@ -1,29 +1,29 @@
-<div {?anchor}id="{anchor|s}"{/anchor} class="call-to-action {accent_color|s}">
+<div {?anchor}id="{anchor|attr}"{/anchor} class="call-to-action {accent_color|attr}">
     <div class="keep-vertical-spacing">
       
         {#rows}
-            <div class="call-to-action__item section is-flex is-justify-content-center pt-6 pb-6"{bg_style|s}>
-             <div class="container columns is-variable is-6 is-vcentered {container_class|s}">
+            <div class="call-to-action__item section is-flex is-justify-content-center pt-6 pb-6 {bg_style|attr}">
+             <div class="container columns is-variable is-6 is-vcentered {container_class|attr}">
                 {?image}
-                    <div class="column is-relative {img_column_class}">
+                    <div class="column is-relative {img_column_class|attr}">
                         {>"shared/layout-after-main-content" /}
-                        <div class="image {image_class|s}">
+                        <div class="image {image_class|attr}">
                             {@image id=image.id size="large" class="objectfit-image" /}
                         </div>
                         {>"shared/layout-before-main-content" /}
                     </div>
                 {/image}
 
-                <div class="column {text_column_class|s}">
+                <div class="column {text_column_class|attr}">
                     {?title}
-                        <h2 class="call-to-action__title h4 mt-0 {txt_color_class|s}">
-                            {title|s}
+                        <h2 class="call-to-action__title h4 mt-0 {txt_color_class|attr}">
+                            {title|html}
                         </h2>
                     {/title}
 
                     {?description}
-                        <div class="call-to-action__description mt-6 mb-6 {txt_color_class|s}">
-                            {description|s}
+                        <div class="call-to-action__description mt-6 mb-6 {txt_color_class|attr}">
+                            {description|kses}
                         </div>
                     {/description}
 
