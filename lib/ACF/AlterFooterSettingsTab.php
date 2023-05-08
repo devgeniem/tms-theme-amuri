@@ -28,7 +28,6 @@ class AlterFooterSettingsTab {
      * @return array
      */
     public function register_fields( array $fields, string $key ) : array {
-
         $strings = [
             'second_contact_title' => [
                 'title'        => 'Toisen yhteystiedon otsikko',
@@ -51,32 +50,37 @@ class AlterFooterSettingsTab {
 
         foreach ( $fields as $field ) {
             if ( $field->get_name() === 'Alatunniste' ) {
-                $a = ( new Field\Text( $strings['second_contact_title']['title'] ) )
+                $second_contact_title = ( new Field\Text( $strings['second_contact_title']['title'] ) )
                     ->set_key( "{$key}_second_contact_title" )
                     ->set_name( 'second_contact_title' )
                     ->set_wrapper_width( 50 )
                     ->set_instructions( $strings['second_contact_title']['instructions'] );
 
-                $s = ( new Field\Textarea( $strings['second_address']['title'] ) )
+                $second_address = ( new Field\Textarea( $strings['second_address']['title'] ) )
                     ->set_key( "{$key}_second_address" )
                     ->set_name( 'second_address' )
                     ->set_new_lines( 'wpautop' )
                     ->set_wrapper_width( 50 )
                     ->set_instructions( $strings['second_address']['instructions'] );
 
-                $d = ( new Field\Email( $strings['second_email']['title'] ) )
+                $second_email = ( new Field\Email( $strings['second_email']['title'] ) )
                     ->set_key( "{$key}_second_email" )
                     ->set_name( 'second_email' )
                     ->set_wrapper_width( 50 )
                     ->set_instructions( $strings['second_email']['instructions'] );
 
-                $f = ( new Field\Text( $strings['second_phone']['title'] ) )
+                $second_phone = ( new Field\Text( $strings['second_phone']['title'] ) )
                     ->set_key( "{$key}_second_phone" )
                     ->set_name( 'second_phone' )
                     ->set_wrapper_width( 50 )
                     ->set_instructions( $strings['second_phone']['instructions'] );
 
-                $field->add_fields( [ $a, $s, $d, $f ] );
+                $field->add_fields( [
+                    $second_contact_title,
+                    $second_address,
+                    $second_email,
+                    $second_phone
+                ] );
             }
         }
 

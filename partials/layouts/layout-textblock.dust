@@ -1,4 +1,4 @@
-<section {?anchor}id="{anchor|attr}"{/anchor} class="section layout-textblock {txt_color_class|s} {bg_style|s}">
+<section {?anchor}id="{anchor|attr}"{/anchor} class="section layout-textblock {txt_color_class|attr} {bg_style|attr}">
     <div class="container keep-vertical-spacing">
         <div class="is-content-grid">
             <div class="textblock__inner keep-vertical-spacing{width_class|attr}">
