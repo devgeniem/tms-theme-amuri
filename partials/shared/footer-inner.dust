@@ -20,7 +20,7 @@
 
                         {?contact_info.address}
                             <div class="mt-4 mb-4 keep-vertical-spacing">
-                                {contact_info.address|html}
+                                {contact_info.address|kses}
                             </div>
                         {/contact_info.address}
 
@@ -52,7 +52,7 @@
 
                         {?second_contact_info.address}
                             <div class="mt-4 mb-4 keep-vertical-spacing">
-                                {second_contact_info.address|html}
+                                {second_contact_info.address|kses}
                             </div>
                         {/second_contact_info.address}
 

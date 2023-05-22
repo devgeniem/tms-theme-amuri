@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.1] - 2023-05-08
+- TMS-952: Change footer address escaping to prevent html tags showing in front-end
+
 ## [1.1.0] - 2023-05-05
 - TMS-952: Change background-colors color-field type to select with predefined choices  on components
 - TMS-952: Replace content-column components textarea with wysiwyg & and add a button-field
