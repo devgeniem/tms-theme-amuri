@@ -5,7 +5,9 @@
             <div class="columns is-gapless">
                 <div class="column">
                     <h1 class="entry__title mt-0 mb-0 has-text-centered">
-                        {@title /}
+                        <span>
+                            {@title /}
+                        </span>
                     </h1>
                 </div>
             </div>
@@ -15,7 +17,7 @@
     <div class="entry__hero-info section pt-6 pb-6 {template_classes.hero_info|s}">
         <div class="container">
             <div class="columns mt-0 mb-0">
-                <div class="column is-10 is-offset-1">
+                <div class="column is-10 is-offset-1 mr-2 ml-2">
                     {>"views/single-dynamic-event/single-dynamic-event-hero-meta" /}
                 </div>
             </div>

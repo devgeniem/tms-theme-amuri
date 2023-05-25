@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.2] - 2023-05-24
+- TMS-952: Add background to dynamic-event single page hero title
+
 ## [1.1.1] - 2023-05-08
 - TMS-952: Change footer address escaping to prevent html tags showing in front-end
 
