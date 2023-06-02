@@ -1,11 +1,9 @@
 {>"shared/base" /}
 
 {<content}
-    {#SingleDynamicEventCpt}
+    {#SingleManualEventCpt}
         <main class="main-content" id="main-content">
             {>"shared/event-content" /}
         </main>
-
-        {>"ui/components" components=components /}
-    {/SingleDynamicEventCpt}
+    {/SingleManualEventCpt}
 {/content}
