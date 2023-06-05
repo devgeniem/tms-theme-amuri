@@ -151,65 +151,66 @@ class ManualEvent implements PostType {
      * @return array
      */
     public static function normalize_event( $event ) {
-
-        // Format location data.
-        $location = [
-            'name'        => $event->location['location_name'] ?? null,
-            'description' => $event->location['location_description'] ?? null,
-            'extra_info'  => $event->location['location_extra_info'] ?? null,
-            'info_url'    => [
-                'title' => $event->location['location_info_url']['title'] ?? null,
-                'url'   => $event->location['location_info_url']['url'] ?? null,
-            ],
-        ];
-
-        // Format price data.
-        $price = [
-            [
-                'price'       => $event->price_is_free
-                    ? __( 'Free', 'tms-theme-base' )
-                    : $event->price['price_price'] ?? null,
-                'description' => $event->price['price_description'] ?? null,
-                'info_url'    => [
-                    'title' => $event->price['price_info_url']['title'] ?? null,
-                    'url'   => $event->price['price_info_url']['url'] ?? null,
-                ],
-            ],
-        ];
-
-        // Format provider data.
-        $provider = [
-            'name'  => $event->provider['provider_name'] ?? null,
-            'email' => $event->provider['provider_email'] ?? null,
-            'phone' => $event->provider['provider_phone'] ?? null,
-            'link'  => [
-                'title' => $event->provider['provider_link']['title'] ?? null,
-                'url'   => $event->provider['provider_link']['url'] ?? null,
-            ],
-        ];
-
-        return [
-            'name'               => $event->title ?? null,
-            'short_description'  => $event->short_description ?? null,
-            'description'        => nl2br( $event->description ) ?? null,
-            'date_title'         => __( 'Dates', 'tms-theme-base' ),
+        $normalized_event = [
+            'name'               => $event->title ?? '',
+            'short_description'  => $event->short_description ?? '',
+            'description'        => nl2br( $event->description ?? '' ),
             'date'               => static::get_event_date( $event ),
-            'time_title'         => __( 'Time', 'tms-theme-base' ),
             'time'               => static::get_event_time( $event ),
             // Include raw dates for possible sorting.
             'start_date_raw'     => static::get_as_datetime( $event->start_datetime ),
             'end_date_raw'       => static::get_as_datetime( $event->end_datetime ),
-            'location_title'     => __( 'Location', 'tms-theme-base' ),
-            'location'           => $location,
-            'price_title'        => __( 'Price', 'tms-theme-base' ),
-            'price'              => $price,
-            'provider_title'     => __( 'Organizer', 'tms-theme-base' ),
-            'provider'           => $provider,
-            'image'              => $event->image ?? null,
-            'url'                => $event->url ?? null,
+            'image'              => $event->image ?? '',
+            'url'                => $event->url ?? '',
             'is_virtual_event'   => $event->is_virtualevent ?? false,
-            'virtual_event_link' => $event->virtual_event_link ?? null,
+            'virtual_event_link' => $event->virtual_event_link ?? '',
+            'date_title'         => __( 'Dates', 'tms-theme-base' ),
+            'time_title'         => __( 'Time', 'tms-theme-base' ),
+            'location_title'     => __( 'Location', 'tms-theme-base' ),
+            'price_title'        => __( 'Price', 'tms-theme-base' ),
+            'provider_title'     => __( 'Organizer', 'tms-theme-base' ),
         ];
+
+        if ( ! empty( $event->location ) ) {
+            $normalized_event['location'] = [
+                'name'        => $event->location['location_name'],
+                'description' => $event->location['location_description'],
+                'extra_info'  => $event->location['location_extra_info'],
+                'info_url'    => [
+                    'title' => $event->location['location_info_url']['title'] ?? '',
+                    'url'   => $event->location['location_info_url']['url'] ?? '',
+                ],
+            ];
+        }
+
+        if ( ! empty( $event->price ) ) {
+            $normalized_event['price'] = [
+                [
+                    'price'       => $event->price_is_free
+                        ? __( 'Free', 'tms-theme-base' )
+                        : $event->price['price_price'],
+                    'description' => $event->price['price_description'],
+                    'info_url'    => [
+                        'title' => $event->price['price_info_url']['title'] ?? '',
+                        'url'   => $event->price['price_info_url']['url'] ?? '',
+                    ],
+                ],
+            ];
+        }
+
+        if ( ! empty( $event->provider ) ) {
+            $normalized_event['provider'] = [
+                'name'  => $event->provider['provider_name'],
+                'email' => $event->provider['provider_email'],
+                'phone' => $event->provider['provider_phone'],
+                'link'  => [
+                    'title' => $event->provider['provider_link']['title'] ?? '',
+                    'url'   => $event->provider['provider_link']['url'] ?? '',
+                ],
+            ];
+        }
+
+        return $normalized_event;
     }
 
     /**
