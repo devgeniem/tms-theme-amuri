@@ -1,10 +1,9 @@
 {>"shared/base" /}
 
 {<content}
-    {#PageEvent}
+    {#SingleManualEventCpt}
         <main class="main-content" id="main-content">
             {>"shared/event-content" /}
         </main>
-    {/PageEvent}
+    {/SingleManualEventCpt}
 {/content}
-
