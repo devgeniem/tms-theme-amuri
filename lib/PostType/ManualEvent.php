@@ -5,6 +5,7 @@
 
 namespace TMS\Theme\Amuri\PostType;
 
+use TMS\Theme\Base\Logger;
 use \TMS\Theme\Base\Interfaces\PostType;
 
 /**
@@ -140,5 +141,137 @@ class ManualEvent implements PostType {
         ];
 
         register_post_type( static::SLUG, $args );
+    }
+
+    /**
+     * Normalize event data with data from LinkedEvents.
+     *
+     * @param object $event
+     * @return array
+     */
+    public static function normalize_event( $event ) {
+        
+        return [
+            'name'               => $event->title ?? null,
+            'short_description'  => $event->short_description ?? null,
+            'description'        => nl2br( $event->description ) ?? null,
+            'date_title'         => __( 'Dates', 'tms-theme-base' ),
+            'date'               => static::get_event_date( $event ),
+            'time_title'         => __( 'Time', 'tms-theme-base' ),
+            'time'               => static::get_event_time( $event ),
+            'location_title'     => __( 'Location', 'tms-theme-base' ),
+            'location'           => [
+                'name'        => $event->location['location_name'] ?? null,
+                'description' => $event->location['location_description'] ?? null,
+                'extra_info'  => $event->location['location_extra_info'] ?? null,
+                'info_url'    => [
+                    'title' => $event->location['location_info_url']['title'] ?? null,
+                    'url'   => $event->location['location_info_url']['url'] ?? null,
+                ],
+            ],
+            'price_title'        => __( 'Price', 'tms-theme-base' ),
+            'price'              => [
+                [
+                    'price'       => $event->price_is_free
+                        ? __( 'Free', 'tms-theme-base' )
+                        : $event->price['price_price'] ?? null,
+                    'description' => $event->price['price_description'] ?? null,
+                    'info_url'    => [
+                        'title' => $event->price['price_info_url']['title'] ?? null,
+                        'url'   => $event->price['price_info_url']['url'] ?? null,
+                    ],
+                ],
+            ],
+            'provider_title'     => __( 'Organizer', 'tms-theme-base' ),
+            'provider'           => [
+                'name'  => $event->provider['provider_name'] ?? null,
+                'email' => $event->provider['provider_email'] ?? null,
+                'phone' => $event->provider['provider_phone'] ?? null,
+                'link'  => [
+                    'title' => $event->provider['provider_link']['title'] ?? null,
+                    'url'   => $event->provider['provider_link']['url'] ?? null,
+                ],
+            ],
+            // 'keywords'           => $keywords ?? null,
+            // 'primary_keyword'    => empty( $keywords ) ? null : $keywords[0],
+            'image'              => $event->image ?? null,
+            'url'                => $event->url ?? null,
+            'is_virtual_event'   => $event->is_virtualevent ?? false,
+            'virtual_event_link' => $event->virtual_event_link ?? null,
+        ];
+    }
+
+    /**
+     * Get event date
+     *
+     * @param object $event Event object.
+     *
+     * @return string|null
+     */
+    protected static function get_event_date( $event ) {
+        if ( empty( $event->start_datetime ) ) {
+            return null;
+        }
+
+        $start_time  = static::get_as_datetime( $event->start_datetime );
+        $end_time    = static::get_as_datetime( $event->end_datetime );
+        $date_format = get_option( 'date_format' );
+
+        if ( $start_time && $end_time && $start_time->diff( $end_time )->days >= 1 ) {
+            return sprintf(
+                '%s - %s',
+                $start_time->format( $date_format ),
+                $end_time->format( $date_format )
+            );
+        }
+
+        return $start_time->format( $date_format );
+    }
+
+    /**
+     * Get event time
+     *
+     * @param object $event Event object.
+     *
+     * @return string|null
+     */
+    protected static function get_event_time( $event ) {
+        if ( empty( $event->start_datetime ) ) {
+            return null;
+        }
+
+        $start_time  = static::get_as_datetime( $event->start_datetime );
+        $end_time    = static::get_as_datetime( $event->end_datetime );
+        $time_format = 'H.i';
+
+        if ( $start_time && $end_time ) {
+            return sprintf(
+                '%s - %s',
+                $start_time->format( $time_format ),
+                $end_time->format( $time_format )
+            );
+        }
+
+        return $start_time->format( $time_format );
+    }
+
+    /**
+     * Get string as date time.
+     *
+     * @param string $value Date time string.
+     *
+     * @return \DateTime|null
+     */
+    protected static function get_as_datetime( $value ) {
+        try {
+            $dt = new \DateTime( $value );
+
+            return $dt;
+        }
+        catch ( \Exception $e ) {
+            ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
+        }
+
+        return null;
     }
 }
