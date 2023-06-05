@@ -159,6 +159,9 @@ class ManualEvent implements PostType {
             'date'               => static::get_event_date( $event ),
             'time_title'         => __( 'Time', 'tms-theme-base' ),
             'time'               => static::get_event_time( $event ),
+            // Include raw dates for possible sorting.
+            'start_date_raw'     => static::get_as_datetime( $event->start_datetime ),
+            'end_date_raw'       => static::get_as_datetime( $event->end_datetime ),
             'location_title'     => __( 'Location', 'tms-theme-base' ),
             'location'           => [
                 'name'        => $event->location['location_name'] ?? null,
@@ -192,8 +195,6 @@ class ManualEvent implements PostType {
                     'url'   => $event->provider['provider_link']['url'] ?? null,
                 ],
             ],
-            // 'keywords'           => $keywords ?? null,
-            // 'primary_keyword'    => empty( $keywords ) ? null : $keywords[0],
             'image'              => $event->image ?? null,
             'url'                => $event->url ?? null,
             'is_virtual_event'   => $event->is_virtualevent ?? false,
@@ -264,7 +265,8 @@ class ManualEvent implements PostType {
      */
     protected static function get_as_datetime( $value ) {
         try {
-            $dt = new \DateTime( $value );
+            // Manual event dates are set in Helsinki timezone, so let's enforce that for sorting purposes.
+            $dt = new \DateTime( $value, new \DateTimeZone( 'Europe/Helsinki' ) );
 
             return $dt;
         }

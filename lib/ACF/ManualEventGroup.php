@@ -3,7 +3,7 @@
  * Copyright (c) 2021. Geniem Oy
  */
 
-namespace TMS\Theme\Base\ACF;
+namespace TMS\Theme\Amuri\ACF;
 
 use Geniem\ACF\ConditionalLogicGroup;
 use Geniem\ACF\Exception;

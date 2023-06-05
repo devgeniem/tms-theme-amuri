@@ -46,6 +46,13 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
 
             return $data;
         } );
+
+        add_filter(
+            'tms/acf/group/fg_page_components/rules',
+            \Closure::fromCallable( [ $this, 'alter_component_rules' ] )
+        );
+
+        add_filter( 'tms/theme/gutenberg/excluded_templates', [ $this, 'excluded_templates' ] );
     }
 
     /**
@@ -187,5 +194,35 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $link['classes'] = '';
 
         return $link;
+    }
+
+    /**
+     * Hide components from PageCombinedEventsList template.
+     *
+     * @param array $rules ACF group rules.
+     *
+     * @return array
+     */
+    public function alter_component_rules( array $rules ) : array {
+        $rules[] = [
+            'param'    => 'page_template',
+            'operator' => '!=',
+            'value'    => \PageCombinedEventsList::TEMPLATE,
+        ];
+
+        return $rules;
+    }
+
+    /**
+     * Exclude Gutenberg from theme-specific templates.
+     *
+     * @param array $templates The templates array.
+     *
+     * @return array
+     */
+    public function excluded_templates( array $templates ) : array {
+        $templates[] = \PageCombinedEventsList::TEMPLATE;
+
+        return $templates;
     }
 }
