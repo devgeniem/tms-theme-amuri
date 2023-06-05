@@ -53,7 +53,7 @@ class SingleManualEventCpt extends PageEvent {
             return Settings::get_setting( 'events_default_image_credits' ) ?? '';
         }
 
-        $image_data = ImageFormatter::get_image_artist( [], ['id' => get_post_thumbnail_id() ] );
+        $image_data = ImageFormatter::get_image_artist( [], [ 'id' => get_post_thumbnail_id() ] );
 
         return $image_data['author_name'] ?? '';
     }

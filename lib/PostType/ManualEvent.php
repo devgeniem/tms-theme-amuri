@@ -146,11 +146,48 @@ class ManualEvent implements PostType {
     /**
      * Normalize event data with data from LinkedEvents.
      *
-     * @param object $event
+     * @param object $event The event object.
+     *
      * @return array
      */
     public static function normalize_event( $event ) {
-        
+
+        // Format location data.
+        $location = [
+            'name'        => $event->location['location_name'] ?? null,
+            'description' => $event->location['location_description'] ?? null,
+            'extra_info'  => $event->location['location_extra_info'] ?? null,
+            'info_url'    => [
+                'title' => $event->location['location_info_url']['title'] ?? null,
+                'url'   => $event->location['location_info_url']['url'] ?? null,
+            ],
+        ];
+
+        // Format price data.
+        $price = [
+            [
+                'price'       => $event->price_is_free
+                    ? __( 'Free', 'tms-theme-base' )
+                    : $event->price['price_price'] ?? null,
+                'description' => $event->price['price_description'] ?? null,
+                'info_url'    => [
+                    'title' => $event->price['price_info_url']['title'] ?? null,
+                    'url'   => $event->price['price_info_url']['url'] ?? null,
+                ],
+            ],
+        ];
+
+        // Format provider data.
+        $provider = [
+            'name'  => $event->provider['provider_name'] ?? null,
+            'email' => $event->provider['provider_email'] ?? null,
+            'phone' => $event->provider['provider_phone'] ?? null,
+            'link'  => [
+                'title' => $event->provider['provider_link']['title'] ?? null,
+                'url'   => $event->provider['provider_link']['url'] ?? null,
+            ],
+        ];
+
         return [
             'name'               => $event->title ?? null,
             'short_description'  => $event->short_description ?? null,
@@ -163,38 +200,11 @@ class ManualEvent implements PostType {
             'start_date_raw'     => static::get_as_datetime( $event->start_datetime ),
             'end_date_raw'       => static::get_as_datetime( $event->end_datetime ),
             'location_title'     => __( 'Location', 'tms-theme-base' ),
-            'location'           => [
-                'name'        => $event->location['location_name'] ?? null,
-                'description' => $event->location['location_description'] ?? null,
-                'extra_info'  => $event->location['location_extra_info'] ?? null,
-                'info_url'    => [
-                    'title' => $event->location['location_info_url']['title'] ?? null,
-                    'url'   => $event->location['location_info_url']['url'] ?? null,
-                ],
-            ],
+            'location'           => $location,
             'price_title'        => __( 'Price', 'tms-theme-base' ),
-            'price'              => [
-                [
-                    'price'       => $event->price_is_free
-                        ? __( 'Free', 'tms-theme-base' )
-                        : $event->price['price_price'] ?? null,
-                    'description' => $event->price['price_description'] ?? null,
-                    'info_url'    => [
-                        'title' => $event->price['price_info_url']['title'] ?? null,
-                        'url'   => $event->price['price_info_url']['url'] ?? null,
-                    ],
-                ],
-            ],
+            'price'              => $price,
             'provider_title'     => __( 'Organizer', 'tms-theme-base' ),
-            'provider'           => [
-                'name'  => $event->provider['provider_name'] ?? null,
-                'email' => $event->provider['provider_email'] ?? null,
-                'phone' => $event->provider['provider_phone'] ?? null,
-                'link'  => [
-                    'title' => $event->provider['provider_link']['title'] ?? null,
-                    'url'   => $event->provider['provider_link']['url'] ?? null,
-                ],
-            ],
+            'provider'           => $provider,
             'image'              => $event->image ?? null,
             'url'                => $event->url ?? null,
             'is_virtual_event'   => $event->is_virtualevent ?? false,
