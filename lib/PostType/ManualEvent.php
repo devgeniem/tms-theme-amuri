@@ -7,6 +7,7 @@ namespace TMS\Theme\Amuri\PostType;
 
 use TMS\Theme\Base\Logger;
 use \TMS\Theme\Base\Interfaces\PostType;
+use TMS\Theme\Amuri\Taxonomy\ManualEventCategory;
 
 /**
  * Manual Event CPT
@@ -208,6 +209,16 @@ class ManualEvent implements PostType {
                     'url'   => $event->provider['provider_link']['url'] ?? '',
                 ],
             ];
+        }
+
+        $normalized_event['keywords'] = wp_get_post_terms( $event->id, ManualEventCategory::SLUG, [ 'fields' => 'id=>name' ] );
+
+        if ( ! empty( $normalized_event['keywords'] ) ) {
+            // Get primary keyword from TSF, fallback to first keyword.
+            $primary_keyword_id = function_exists( 'the_seo_framework' )
+                ? the_seo_framework()->get_primary_term_id( $event->id, ManualEventCategory::SLUG )
+                : array_key_first( $normalized_event['keywords'] );
+            $normalized_event['primary_keyword'] = $normalized_event['keywords'][ $primary_keyword_id ];
         }
 
         return $normalized_event;

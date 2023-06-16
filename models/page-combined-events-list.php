@@ -1,6 +1,5 @@
 <?php
 
-use DustPress\Query;
 use TMS\Theme\Amuri\PostType;
 use TMS\Theme\Amuri\PostType\ManualEvent;
 use TMS\Theme\Base\Logger;
@@ -133,6 +132,7 @@ class PageCombinedEventsList extends PageEventsSearch {
 
         $events = array_map( function ( $id ) {
             $event        = (object) get_fields( $id );
+            $event->id    = $id;
             $event->title = get_the_title( $id );
             $event->url   = get_permalink( $id );
             $event->image = has_post_thumbnail( $id ) ? get_the_post_thumbnail_url( $id, 'medium_large' ) : null;
