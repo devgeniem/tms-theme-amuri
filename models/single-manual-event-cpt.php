@@ -74,6 +74,7 @@ class SingleManualEventCpt extends PageEvent {
         try {
             $fields       = get_fields();
             $event        = (object) $fields;
+            $event->id    = $this->get_event_id();
             $event->title = get_the_title();
             $event->url   = get_permalink();
             $event->image = has_post_thumbnail() ? get_the_post_thumbnail_url( null, 'large' ) : null;
