@@ -151,7 +151,7 @@ class ManualEvent implements PostType {
      *
      * @return array
      */
-    public static function normalize_event( $event ) {
+    public static function normalize_event( $event ) { // phpcs:disable Generic.Metrics.CyclomaticComplexity
         $normalized_event = [
             'name'               => $event->title ?? '',
             'short_description'  => $event->short_description ?? '',
@@ -211,17 +211,22 @@ class ManualEvent implements PostType {
             ];
         }
 
-        $normalized_event['keywords'] = wp_get_post_terms( $event->id, ManualEventCategory::SLUG, [ 'fields' => 'id=>name' ] );
+        $normalized_event['keywords'] = wp_get_post_terms(
+            $event->id,
+            ManualEventCategory::SLUG,
+            [ 'fields' => 'id=>name' ]
+        );
 
         if ( ! empty( $normalized_event['keywords'] ) ) {
             // Get primary keyword from TSF, fallback to first keyword.
-            $primary_keyword_id = function_exists( 'the_seo_framework' )
+            $primary_keyword_id                  = function_exists( 'the_seo_framework' )
                 ? the_seo_framework()->get_primary_term_id( $event->id, ManualEventCategory::SLUG )
                 : array_key_first( $normalized_event['keywords'] );
             $normalized_event['primary_keyword'] = $normalized_event['keywords'][ $primary_keyword_id ];
         }
 
         return $normalized_event;
+        // phpcs:enable Generic.Metrics.CyclomaticComplexity
     }
 
     /**

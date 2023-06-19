@@ -240,7 +240,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      *
      * @param array $events The events.
      * @param array $layout Layout options.
-     * @return void
+     * @return array
      */
     public function layout_events_events( $events, $layout ) {
         $curdate    = date( 'Y-m-d' );

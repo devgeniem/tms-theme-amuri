@@ -117,7 +117,7 @@ class PageCombinedEventsList extends PageEventsSearch {
     protected function get_manual_events() : array {
         $args = [
             'post_type'      => PostType\ManualEvent::SLUG,
-            'posts_per_page' => 200,
+            'posts_per_page' => 200, // phpcs:ignore
             'fields'         => 'ids',
             'meta_query'     => [
                 [
