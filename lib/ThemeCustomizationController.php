@@ -2,6 +2,7 @@
 
 namespace TMS\Theme\Amuri;
 
+use TMS\Theme\Amuri\PostType\ManualEvent;
 use WP_post;
 use function add_filter;
 
@@ -53,6 +54,13 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         );
 
         add_filter( 'tms/theme/gutenberg/excluded_templates', [ $this, 'excluded_templates' ] );
+
+        add_filter(
+            'tms/theme/layout_events/events',
+            \Closure::fromCallable( [ $this, 'layout_events_events' ] ),
+            10,
+            2
+        );
     }
 
     /**
@@ -224,5 +232,71 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $templates[] = \PageCombinedEventsList::TEMPLATE;
 
         return $templates;
+    }
+
+    /**
+     * Filter events for events highlight layout.
+     * Add manual events to the list, sort by start date and return correct amount.
+     *
+     * @param array $events The events.
+     * @param array $layout Layout options.
+     * @return void
+     */
+    public function layout_events_events( $events, $layout ) {
+        $curdate    = date( 'Y-m-d' );
+        $start_date = $layout['starts_today'] ? $curdate : $layout['start'];
+        $start_date = $start_date ?: $curdate;
+        $end_date   = $layout['end'];
+        $count      = $layout['page_size'] ?: 10;
+        $args       = [
+            'post_type'      => PostType\ManualEvent::SLUG,
+            'posts_per_page' => $count,
+            'fields'         => 'ids',
+            'meta_query'     => [
+                'relation' => 'AND',
+                [
+                    'key'     => 'start_datetime',
+                    'value'   => $start_date,
+                    'compare' => '>=',
+                ],
+            ],
+        ];
+
+        if ( ! empty( $end_date ) ) {
+            $args['meta_query'][] = [
+                'key'     => 'end_datetime',
+                'value'   => $end_date,
+                'compare' => '<=',
+            ];
+        }
+
+        $query = new \WP_Query( $args );
+
+        // Return original events if no manual events found.
+        if ( empty( $query->posts ) ) {
+            return $events;
+        }
+
+        // Normalize the manual events.
+        $manual_events = array_map( function ( $id ) {
+            $event        = (object) get_fields( $id );
+            $event->id    = $id;
+            $event->title = get_the_title( $id );
+            $event->url   = get_permalink( $id );
+            $event->image = has_post_thumbnail( $id ) ? get_the_post_thumbnail_url( $id, 'medium_large' ) : null;
+
+            return ManualEvent::normalize_event( $event );
+        }, $query->posts );
+
+        // Merge manual events with original events.
+        $events = array_merge( $events, $manual_events );
+
+        // Sort events by start datetime objects.
+        usort( $events, function( $a, $b ) {
+            return $a['start_date_raw'] <=> $b['start_date_raw'];
+        } );
+
+        // Return correct amount of events.
+        return array_slice( $events, 0, $count );
     }
 }
