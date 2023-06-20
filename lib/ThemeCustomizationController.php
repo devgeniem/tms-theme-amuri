@@ -2,9 +2,11 @@
 
 namespace TMS\Theme\Amuri;
 
-use TMS\Theme\Amuri\PostType\ManualEvent;
 use WP_post;
+use Geniem\ACF\Field;
 use function add_filter;
+use TMS\Theme\Amuri\Taxonomy\ManualEventCategory;
+use TMS\Theme\Amuri\PostType\ManualEvent;
 
 /**
  * Class ThemeCustomizationController
@@ -61,6 +63,8 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             10,
             2
         );
+
+        add_filter( 'tms/acf/layout/_events/fields', [ $this, 'layout_events_fields' ], 10, 2 );
     }
 
     /**
@@ -238,17 +242,23 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      * Filter events for events highlight layout.
      * Add manual events to the list, sort by start date and return correct amount.
      *
-     * @param array $events The events.
+     * @param ?array $events The events.
      * @param array $layout Layout options.
      * @return array
      */
     public function layout_events_events( $events, $layout ) {
-        $curdate    = date( 'Y-m-d' );
-        $start_date = $layout['starts_today'] ? $curdate : $layout['start'];
-        $start_date = $start_date ?: $curdate;
-        $end_date   = $layout['end'];
-        $count      = $layout['page_size'] ?: 10;
-        $args       = [
+        if ( empty( $events ) ) {
+            $events = [];
+        }
+
+        $curdate      = date( 'Y-m-d' );
+        $start_date   = $layout['starts_today'] ? $curdate : $layout['start'];
+        $start_date   = $start_date ?: $curdate;
+        $end_date     = $layout['end'];
+        $count        = $layout['page_size'] ?: 10;
+        $categories   = $layout['manual_event_categories'] ?? [];
+        $search_query = $layout['text'] ?? '';
+        $args         = [
             'post_type'      => PostType\ManualEvent::SLUG,
             'posts_per_page' => $count,
             'fields'         => 'ids',
@@ -270,7 +280,25 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             ];
         }
 
+        if ( ! empty( $categories ) ) {
+            $args['tax_query'] = [
+                [
+                    'taxonomy' => Taxonomy\ManualEventCategory::SLUG,
+                    'field'    => 'term_id',
+                    'terms'    => $categories,
+                ],
+            ];
+        }
+
+        if ( ! empty( $search_query ) ) {
+            $args['s'] = $search_query;
+        }
+
         $query = new \WP_Query( $args );
+
+        echo '<pre>';
+        var_dump( $query );
+        echo '</pre>';
 
         // Return original events if no manual events found.
         if ( empty( $query->posts ) ) {
@@ -298,5 +326,26 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
 
         // Return correct amount of events.
         return array_slice( $events, 0, $count );
+    }
+
+    /**
+     * Filter events layout fields.
+     * Add manual event categories field.
+     *
+     * @param array $fields The fields.
+     * @param string $key The key.
+     * @return array
+     */
+    public function layout_events_fields( $fields, $key ) {
+        $manual_event_categories = ( new Field\Taxonomy( 'Tapahtumakategoriat' ) )
+            ->set_key( "{$key}_manual_event_categories" )
+            ->set_name( 'manual_event_categories' )
+            ->set_instructions( 'Koskee vain manuaalisia tapahtumia.' )
+            ->set_taxonomy( ManualEventCategory::SLUG )
+            ->set_field_type( 'multi_select' );
+
+        $fields[] = $manual_event_categories;
+
+        return $fields;
     }
 }

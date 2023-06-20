@@ -178,12 +178,14 @@ class ManualEventGroup {
                 ->set_key( "{$key}_description" )
                 ->set_name( 'description' )
                 ->set_instructions( $strings['description']['instructions'] )
-                ->disable_media_upload();
+                ->disable_media_upload()
+                ->redipress_include_search( 'wp_strip_all_tags' );
 
             $short_description = ( new Field\Textarea( $strings['short_description']['label'] ) )
                 ->set_key( "{$key}_short_description" )
                 ->set_name( 'short_description' )
-                ->set_instructions( $strings['short_description']['instructions'] );
+                ->set_instructions( $strings['short_description']['instructions'] )
+                ->redipress_include_search();
 
             $start_datetime = ( new Field\DateTimePicker( $strings['start_datetime']['label'] ) )
                 ->set_key( "{$key}_start_datetime" )
@@ -202,17 +204,20 @@ class ManualEventGroup {
             $location_name = ( new Field\Text( $strings['location']['name']['label'] ) )
                 ->set_key( "{$key}_location_name" )
                 ->set_name( 'location_name' )
-                ->set_instructions( $strings['location']['name']['instructions'] );
+                ->set_instructions( $strings['location']['name']['instructions'] )
+                ->redipress_include_search();
 
             $location_description = ( new Field\Textarea( $strings['location']['description']['label'] ) )
                 ->set_key( "{$key}_location_description" )
                 ->set_name( 'location_description' )
-                ->set_instructions( $strings['location']['description']['instructions'] );
+                ->set_instructions( $strings['location']['description']['instructions'] )
+                ->redipress_include_search();
 
             $location_extra_info = ( new Field\Textarea( $strings['location']['extra_info']['label'] ) )
                 ->set_key( "{$key}_location_extra_info" )
                 ->set_name( 'location_extra_info' )
-                ->set_instructions( $strings['location']['extra_info']['instructions'] );
+                ->set_instructions( $strings['location']['extra_info']['instructions'] )
+                ->redipress_include_search();
 
             $location_info_url = ( new Field\Link( $strings['location']['info_url']['label'] ) )
                 ->set_key( "{$key}_location_info_url" )
@@ -233,7 +238,8 @@ class ManualEventGroup {
             $price_description = ( new Field\Textarea( $strings['price']['description']['label'] ) )
                 ->set_key( "{$key}_price_description" )
                 ->set_name( 'price_description' )
-                ->set_instructions( $strings['price']['description']['instructions'] );
+                ->set_instructions( $strings['price']['description']['instructions'] )
+                ->redipress_include_search();
 
             $price_info_url = ( new Field\Link( $strings['price']['info_url']['label'] ) )
                 ->set_key( "{$key}_price_info_url" )
@@ -243,7 +249,8 @@ class ManualEventGroup {
             $provider_name = ( new Field\Text( $strings['provider']['name']['label'] ) )
                 ->set_key( "{$key}_provider_name" )
                 ->set_name( 'provider_name' )
-                ->set_instructions( $strings['provider']['name']['instructions'] );
+                ->set_instructions( $strings['provider']['name']['instructions'] )
+                ->redipress_include_search();
 
             $provider_email = ( new Field\Email( $strings['provider']['email']['label'] ) )
                 ->set_key( "{$key}_provider_email" )
