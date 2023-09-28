@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-978: Reduce single manual-event description line-height & margin
+
 ## [1.1.3] - 2023-09-25
 - TMS-947: Fix related articles images on single article page
 
