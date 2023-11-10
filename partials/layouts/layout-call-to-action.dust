@@ -1,6 +1,6 @@
 <div {?anchor}id="{anchor|attr}"{/anchor} class="call-to-action {accent_color|attr}">
     <div class="keep-vertical-spacing">
-      
+
         {#rows}
             <div class="call-to-action__item section is-flex is-justify-content-center pt-6 pb-6 {bg_style|attr}">
              <div class="container columns is-variable is-6 is-vcentered {container_class|attr}">
@@ -11,6 +11,14 @@
                             {@image id=image.id size="large" class="objectfit-image" /}
                         </div>
                         {>"shared/layout-before-main-content" /}
+
+                        {@isset key1=display_caption key2=image.caption method="and" }
+                            {>"ui/image/image-caption"  /}
+                        {/isset}
+
+                        {?display_artist}
+                            {>"ui/image/image-meta-minimal"  /}
+                        {/display_artist}
                     </div>
                 {/image}
 
@@ -33,6 +41,5 @@
         </div>
         {/rows}
 
-        
     </div>
 </div>
