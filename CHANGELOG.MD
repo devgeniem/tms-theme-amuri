@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.0] - 2023-11-21
+
+- TMS-974: Recurring event layout changes
+
 ## [1.1.7] - 2023-10-23
 
 - TMS-970: Add image meta to call-to-action and content-columns components
