@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [1.2.0] - 2023-11-21
 
 - TMS-974: Recurring event layout changes
+- TMS-935: Archive filter accessibility fixes
 
 ## [1.1.7] - 2023-10-23
 
