@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.1] - 2024-02-01
+
+- TMS-980: Add redipress_include_search to include component contents in search results
+
 ## [1.2.0] - 2023-11-21
 
 - TMS-974: Recurring event layout changes

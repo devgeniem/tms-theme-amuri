@@ -52,14 +52,14 @@ class AlterCallToActionLayout {
 
         try {
             $round_image_field = ( new Field\TrueFalse( $strings['round_image']['label'] ) )
-                ->set_key( "${key}_round_image" )
+                ->set_key( "{$key}_round_image" )
                 ->set_name( 'round_image' )
                 ->use_ui()
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $strings['round_image']['instructions'] );
 
             $aspect_ratio_field = ( new Field\TrueFalse( $strings['wide_img']['label'] ) )
-                ->set_key( "${key}_wide_img" )
+                ->set_key( "{$key}_wide_img" )
                 ->set_name( 'wide_img' )
                 ->use_ui()
                 ->set_wrapper_width( 33 )
