@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1013: Add event weekly entry dates to event partial
+
 ## [1.2.1] - 2024-02-01
 
 - TMS-980: Add redipress_include_search to include component contents in search results
