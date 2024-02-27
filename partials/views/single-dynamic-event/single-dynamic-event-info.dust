@@ -4,11 +4,21 @@
             {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.date_title template_classes=template_classes.info_group_title icon="date" /}
 
             <div class="info-group__description has-text-small has-text-small pt-1 pr-8 pb-4 pl-9">
-                {#event.normalized.dates}
-                    <div>
-                        {date|html}
-                    </div>
+                {?event.normalized.dates}
+                    {#event.normalized.dates}
+                        <div>
+                            {date|html}
+                        </div>
+                    {/event.normalized.dates}
                 {/event.normalized.dates}
+
+                {?event.normalized.entries}
+                    {#event.normalized.entries}
+                        <div>
+                            {date|attr}
+                        </div>
+                    {/event.normalized.entries}
+                {/event.normalized.entries}
             </div>
         </div>
     {/event.normalized.date}
