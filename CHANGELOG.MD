@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-914: Change anchor-link blocks border-color
 
+## [1.2.2] - 2024-03-18
+
+- TMS-1017: Add image alt-text to imported news single-article
+
 ## [1.2.1] - 2024-02-01
 
 - TMS-980: Add redipress_include_search to include component contents in search results
