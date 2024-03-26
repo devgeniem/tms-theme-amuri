@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [1.2.3] - 2024-03-26
 
 - TMS-914: Change anchor-link blocks border-color
+- TMS-1013: Add event weekly entry dates to event partial
 
 ## [1.2.2] - 2024-03-18
 
