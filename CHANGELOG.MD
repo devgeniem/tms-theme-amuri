@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.3] - 2024-03-26
+
+- TMS-914: Change anchor-link blocks border-color
+- TMS-1013: Add event weekly entry dates to event partial
 - TMS-1021: Remove image carousel modal max-height
 
 ## [1.2.2] - 2024-03-18
