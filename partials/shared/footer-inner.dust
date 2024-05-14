@@ -77,6 +77,30 @@
                 {#link_columns}
                     {>"shared/footer-column" /}
                 {/link_columns}
+
+                {?some_link_columns}
+                    <div class="column {column_class|attr}">
+                        {?some_link_columns.column_title}
+                            <h2 class="h4 mt-4 mb-4">
+                                {some_link_columns.column_title|html}
+                            </h2>
+                        {/some_link_columns.column_title}
+
+                        <ul class="is-unstyled {Footer.typography.column|attr}">
+                            {#some_link_columns.some_link_column}
+                                <li class="mb-3">
+                                    <a href="{some_link.url|url}" target="{some_link.target|attr}"
+                                    class="is-flex is-align-items-center {Footer.colors.link|attr}">
+                                        {>"ui/icon" icon="{some_icon|attr}" class="icon--xlarge is-primary-invert mr-2" /}
+                                        <span>
+                                            {some_link.title|html}
+                                        </span>
+                                    </a>
+                                </li>
+                            {/some_link_columns.some_link_column}
+                        </ul>
+                    </div>
+                {/some_link_columns}
             </div>
 
             <div class="columns is-multiline is-vcentered mt-4 mt-0-desktop">
