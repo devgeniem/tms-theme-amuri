@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.5] - 2024-05-20
+
 - TMS-1028: Add social-media link column to footer
 
 ## [1.2.4] - 2024-05-14
