@@ -33,4 +33,22 @@
             max-height: $image-max-height;
         }
     }
+
+    &__close-all,
+    &__open-all,
+    &__icon-text {
+        color: $black !important;
+    }
+
+    &__close-all,
+    &__open-all {
+        &:hover,
+        &:focus,
+        &:active
+        &:focus:active,
+        &:hover:active {
+            background-color: transparent !important;
+            color: $black !important;
+        }
+    }
 }
