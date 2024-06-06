@@ -12,7 +12,7 @@
 
                 <div class="column">
                     {?additional_info_top}
-                        <div class="mb-3 keep-vertical-spacing is-size-5 is-family-secondary">
+                        <div class="mb-3 keep-vertical-spacing is-size-5">
                             {additional_info_top|s}
                         </div>
                     {/additional_info_top}

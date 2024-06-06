@@ -1,1 +1,48 @@
-// Put fonts here, please.
+// Font families
+@font-face {
+    font-family: "Adelon";
+    font-weight: 700;
+    src: url("./../fonts/Adelon-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Adelon";
+    font-weight: 500;
+    font-display: swap;
+    src: url("./../fonts/Adelon-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Adelon";
+    font-weight: 400;
+    font-display: swap;
+    src: url("./../fonts/Adelon-Regular.ttf");
+}
+
+@font-face {
+    font-family: "RobotoSlab";
+    font-weight: 400;
+    font-display: swap;
+    src: url("./../fonts/RobotoSlab-Regular.ttf");
+}
+
+@font-face {
+    font-family: "RobotoSlab";
+    font-weight: 500;
+    font-display: swap;
+    src: url("./../fonts/RobotoSlab-Medium.ttf");
+}
+
+@font-face {
+    font-family: "RobotoSlab";
+    font-weight: 600;
+    font-display: swap;
+    src: url("./../fonts/RobotoSlab-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "RobotoSlab";
+    font-weight: 700;
+    font-display: swap;
+    src: url("./../fonts/RobotoSlab-Bold.ttf");
+}

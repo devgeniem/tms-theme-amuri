@@ -17,7 +17,7 @@
                         {/title}
 
                         {?description}
-                            <div class="h3 mb-6 has-text-secondary-invert keep-vertical-spacing">
+                            <div class="mb-6 has-text-secondary-invert keep-vertical-spacing">
                                 {description|s}
                             </div>
                         {/description}
@@ -44,7 +44,7 @@
                                     {title|s}
                                 </p>
 
-                                <p class="mt-0 mb-0 is-family-secondary has-text-large">{text|s}</p>
+                                <p class="mt-0 mb-0 has-text-large">{text|s}</p>
 
                                 {?logo}
                                     <div class="image-container">

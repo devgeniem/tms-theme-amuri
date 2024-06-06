@@ -1,53 +1,53 @@
-<div class="events__item has-height-100 {item_classes.grid.item|s}">
+<div class="events__item has-height-100 {item_classes.grid.item|attr}">
     {?image}
         <div class="image is-relative is-4by3" aria-hidden="true">
-            <a href="{url}" aria-hidden="true" tabindex="-1">
-                <img src="{image}" alt="" class="objectfit-image">
+            <a href="{url|url}" aria-hidden="true" tabindex="-1">
+                <img src="{image|attr}" alt="" class="objectfit-image">
             </a>
 
             {?primary_keyword}
                 <span class="pill is-absolute has-bottom-2 has-left-2 is-bordered is-secondary">
-                    {primary_keyword|s}
+                    {primary_keyword|html}
                 </span>
             {/primary_keyword}
 
         </div>
     {/image}
 
-    <div class="events__item-inner pt-5 pb-6 {item_classes.grid.item_inner|s}">
+    <div class="events__item-inner pt-5 pb-6 {item_classes.grid.item_inner|attr}">
         <h3 class="h5 mt-0 mb-5">
-            <a href="{url}">
-                {name|s}
+            <a href="{url|url}">
+                {name|html}
             </a>
         </h3>
 
         <p class="has-text-small">
-            {short_description|s}
+            {short_description|kses}
         </p>
 
-        <div class="events__meta is-flex is-family-secondary is-align-items-center">
-            <span class="is-flex" aria-label="{Strings.s.event.date|s}">
-                {>"ui/icon" icon="date" class="icon--large is-primary mr-2 {item_classes.grid.icon|s}" /}
+        <div class="events__meta is-flex is-align-items-center">
+            <span class="is-flex" aria-label="{Strings.s.event.date|attr}">
+                {>"ui/icon" icon="date" class="icon--large is-primary mr-2 {item_classes.grid.icon|attr}" /}
             </span>
 
-            {date|s}
+            {date|html}
         </div>
 
-        <div class="events__meta is-flex is-family-secondary is-align-items-center">
-            <span class="is-flex" aria-label="{Strings.s.event.time|s}">
-                {>"ui/icon" icon="time" class="icon--large is-primary mr-2 {item_classes.grid.icon|s}" /}
+        <div class="events__meta is-flex is-align-items-center">
+            <span class="is-flex" aria-label="{Strings.s.event.time|attr}">
+                {>"ui/icon" icon="time" class="icon--large is-primary mr-2 {item_classes.grid.icon|attr}" /}
             </span>
 
-            {time|s}
+            {time|html}
         </div>
 
         {?location.name}
-            <div class="events__meta is-flex is-family-secondary is-align-items-center">
-                <span class="is-flex" aria-label="{Strings.s.event.location|s}">
-                    {>"ui/icon" icon=location_icon class="icon--large is-primary mr-2 {item_classes.grid.icon|s}" /}
+            <div class="events__meta is-flex is-align-items-center">
+                <span class="is-flex" aria-label="{Strings.s.event.location|attr}">
+                    {>"ui/icon" icon=location_icon class="icon--large is-primary mr-2 {item_classes.grid.icon|attr}" /}
                 </span>
 
-                {location.name|s}
+                {location.name|html}
             </div>
         {/location.name}
     </div>

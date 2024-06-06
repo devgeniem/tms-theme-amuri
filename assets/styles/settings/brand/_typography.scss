@@ -11,8 +11,8 @@ $base-sizes: (
     "desktop": ("base_size": 18px, "scale_value": 1.1875, "break_point": $desktop)
 ) !default;
 
-$family-sans-serif: "ff-good-headline-web-pro-con", blinkmacsystemfont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-$family-primary: "unit", blinkmacsystemfont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$family-sans-serif: "Adelon", blinkmacsystemfont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$family-primary: "RobotoSlab", blinkmacsystemfont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $family-secondary: $family-sans-serif;
 
 $font-family-header: $family-secondary;
@@ -158,7 +158,7 @@ h4,
     line-height: 1.35;
 }
 
-$link-outline-color: $color-amuri-dark-yellow;
+$link-outline-color: $color-amuri-coffee;
 
 main {
     a:not(.pill):not(.button) {
@@ -172,7 +172,7 @@ main {
 
         &:active {
             outline: none !important;
-            color: $color-amuri-dark-yellow !important;
+            color: $color-amuri-coffee !important;
             text-decoration: none;
         }
     }
@@ -182,7 +182,7 @@ main {
     &__content {
         > p {
             > a {
-                color: $color-amuri-dark-yellow;
+                color: $color-amuri-coffee;
                 text-decoration: underline;
             }
         }

@@ -42,7 +42,6 @@ class AlterQuoteData {
                 ] ) ? 'is-size-1' : 'is-size-4',
             ];
             $data['classes']['author'] = [
-                'is-family-secondary',
                 'is-size-6',
             ];
         }

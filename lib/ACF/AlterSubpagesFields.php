@@ -40,8 +40,8 @@ class AlterSubpagesFields {
         try {
             $fields['background_color']
                 ->set_choices( [
-                    'coffee' => 'Kahvinruskea',
-                    'creme'  => 'Kermankeltainen',
+                    'primary-invert' => 'Kahvinruskea',
+                    'primary'        => 'Kermankeltainen',
                 ] );
         }
         catch ( Exception $e ) {
