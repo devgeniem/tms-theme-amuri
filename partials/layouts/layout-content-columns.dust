@@ -7,6 +7,14 @@
                         <div class="image">
                             {@image id=image.id size="large" class="objectfit-image" /}
                         </div>
+
+                        {@isset key1=display_caption key2=image.caption method="AND" }
+                            {>"ui/image/image-caption"  /}
+                        {/isset}
+
+                        {?display_artist}
+                            {>"ui/image/image-meta-minimal" /}
+                        {/display_artist}
                     </div>
                 {/image}
 
@@ -20,6 +28,7 @@
                     {?description}
                         <div class="content-columns__description mt-6 keep-vertical-spacing">
                             {description|kses}
+                            {>"ui/button-link" classes="is-primary" icon="chevron-right" icon_classes="icon--medium"  /}
                         </div>
                     {/description}
                 </div>

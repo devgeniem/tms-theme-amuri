@@ -1,8 +1,11 @@
 .single-dynamic-event-cpt {
     .entry {
         &__hero {
-            h1 {
+            h1 span {
+                padding: 0 .5rem;
+                background-color: $primary !important;
                 color: $primary-invert !important;
+                box-decoration-break: clone;
             }
         }
     }
