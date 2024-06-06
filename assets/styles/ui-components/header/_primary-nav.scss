@@ -16,6 +16,11 @@
         @include from($desktop) {
             padding-bottom: 0 !important;
         }
+
+        > a,
+        &.has-dropdown > div > a.navbar-link {
+            font-size: 1rem !important;
+        }
     }
 
     > .navbar-item,
@@ -63,12 +68,13 @@
 
     > .has-dropdown.current-menu-item.is-active > div > a.navbar-link,
     > .has-dropdown.current-menu-item:hover > div > a.navbar-link,
+    > .has-dropdown.current-menu-parent:hover > div > a.navbar-link,
     > .has-dropdown.current-menu-item > div > a.navbar-link {
         color: $primary !important;
     }
 
-    > .has-dropdown:not(.current-menu-item).is-active > div > a.navbar-link,
-    > .has-dropdown:not(.current-menu-item):hover > div > a.navbar-link {
+    > .has-dropdown:not(.current-menu-item):not(.current-menu-parent).is-active > div > a.navbar-link,
+    > .has-dropdown:not(.current-menu-item):not(.current-menu-parent):hover > div > a.navbar-link {
         color: $primary-invert !important;
     }
 

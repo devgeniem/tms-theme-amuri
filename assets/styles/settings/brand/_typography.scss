@@ -158,7 +158,7 @@ h4,
     line-height: 1.35;
 }
 
-$link-outline-color: $color-amuri-dark-yellow;
+$link-outline-color: $color-amuri-coffee;
 
 main {
     a:not(.pill):not(.button) {
@@ -172,7 +172,7 @@ main {
 
         &:active {
             outline: none !important;
-            color: $color-amuri-dark-yellow !important;
+            color: $color-amuri-coffee !important;
             text-decoration: none;
         }
     }
@@ -182,7 +182,7 @@ main {
     &__content {
         > p {
             > a {
-                color: $color-amuri-dark-yellow;
+                color: $color-amuri-coffee;
                 text-decoration: underline;
             }
         }
