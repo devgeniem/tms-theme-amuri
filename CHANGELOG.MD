@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1021: Remove image carousel modal max-height
+- TMS-1054: Remove hero overlay-toggle from single page editor
+
+## [1.2.6] - 2024-06-04
+
 - TMS-1044: Accordion style changes
 
 ## [1.2.5] - 2024-05-20
