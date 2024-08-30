@@ -64,6 +64,7 @@
 
     > .has-dropdown > div > .navbar-link {
         padding-left: 0;
+        padding-right: $theme-spacing-three-quarters;
     }
 
     > .has-dropdown.current-menu-item.is-active > div > a.navbar-link,
