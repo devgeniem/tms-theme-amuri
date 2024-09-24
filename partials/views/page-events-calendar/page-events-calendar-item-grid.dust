@@ -50,5 +50,17 @@
                 {location.name|html}
             </div>
         {/location.name}
+
+        {#price}
+            {?is_free}
+                <div class="events__meta is-flex is-align-items-center">
+                    <span class="is-flex" aria-label="{Strings.s.event.price|attr}">
+                        {>"ui/icon" icon="euro" class="icon--large is-primary mr-2 {item_classes.grid.icon|attr}" /}
+                    </span>
+
+                    {price|html}
+                </div>
+            {/is_free}
+        {/price}
     </div>
 </div>
