@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-1021: Remove image carousel modal max-height
 - TMS-1062: Increase menu-dropdown button size
+- TMS-1100: Show multiple locations for events if available
+
+## [1.3.3] - 2024-11-25
+
 - TMS-1059: Add Sign up-section to event partial
 
 ## [1.3.2] - 2024-09-25

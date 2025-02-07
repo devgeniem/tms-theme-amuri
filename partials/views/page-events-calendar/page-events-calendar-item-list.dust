@@ -33,7 +33,7 @@
                         {>"ui/icon" icon="date" class="icon--large is-primary mr-2 {item_classes.list.icon|attr}" /}
                     </span>
 
-                    {date|html}
+                    <p class="mt-0 mb-0">{date|html}</p>
                 </div>
 
                 <div class="is-flex is-align-items-center mt-2 mb-2 mr-4 {item_classes.list.meta_label|attr}">
@@ -41,7 +41,7 @@
                         {>"ui/icon" icon="time" class="icon--large is-primary mr-2 {item_classes.list.icon|attr}" /}
                     </span>
 
-                    {time|html}
+                    <p class="mt-0 mb-0">{time|html}</p>
                 </div>
 
                 {?location.name}
@@ -50,17 +50,22 @@
                             {>"ui/icon" icon=location_icon class="icon--large is-primary mr-2 {item_classes.list.icon|attr}" /}
                         </span>
 
-                        {location.name|html}
+                        <p class="mt-0 mb-0">
+                            {location.name|html}
+                            {?location_count.other_locations_string}
+                                {location_count.other_locations_string|html}
+                            {/location_count.other_locations_string}
+                        </p>
                     </div>
                 {/location.name}
             </div>
 
             <p class="has-text-small {item_classes.list.description|attr}">
-                {short_description|html}
+                <p class="mt-0 mb-0">{short_description|html}</p>
             </p>
 
             <a href="{url}" class="button is-primary is-small mt-4">
-                {Strings.s.common.read_more|html}
+                <p class="mt-0 mb-0">{Strings.s.common.read_more|html}</p>
             </a>
         </div>
     </div>

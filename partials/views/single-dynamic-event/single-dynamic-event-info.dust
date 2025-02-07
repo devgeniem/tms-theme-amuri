@@ -6,17 +6,17 @@
             <div class="info-group__description has-text-small has-text-small pt-1 pr-8 pb-4 pl-9">
                 {?event.normalized.dates}
                     {#event.normalized.dates}
-                        <div>
+                        <p class="mb-0 mt-0">
                             {date|html}
-                        </div>
+                        </p>
                     {/event.normalized.dates}
                 {/event.normalized.dates}
 
                 {?event.normalized.entries}
                     {#event.normalized.entries}
-                        <div>
+                        <p class="mb-0 mt-0">
                             {date|attr}
-                        </div>
+                        </p>
                     {/event.normalized.entries}
                 {/event.normalized.entries}
             </div>
@@ -28,7 +28,7 @@
             {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.date_title template_classes=template_classes.info_group_title icon="date" /}
 
             <div class="info-group__description has-text-small has-text-small pt-1 pr-8 pb-4 pl-9">
-                {event.normalized.date|html}
+                <p class="mb-0 mt-0">{event.normalized.date|html}</p>
             </div>
         </div>
     {/event.normalized.date}
@@ -37,24 +37,38 @@
             {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.time_title template_classes=template_classes.info_group_title icon="time" /}
 
             <div class="info-group__description has-text-small has-text-small pt-1 pr-8 pb-4 pl-9">
-                {event.normalized.time|html}
+                <p class="mb-0 mt-0">{event.normalized.time|html}</p>
             </div>
         </div>
     {/event.normalized.time}
 {/event.normalized.recurring}
 
-{?event.normalized.location}
+{^event.normalized.multiple_locations}
+    {?event.normalized.location}
+        <div class="info-group mb-5 has-border-gray has-border-1 {template_classes.info_group|attr}">
+            {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.location_title template_classes=template_classes.info_group_title icon="location" /}
+
+            <div class="info-group__description has-text-small has-text-small pt-1 pr-8 pb-4 pl-9">
+                <p class="mb-2 mt-0">{event.normalized.location.name|html}</p>
+                <p class="mb-2 mt-0">{event.normalized.location.description|html}</p>
+                <p class="mb-2 mt-0">{event.normalized.location.extra_info|html}</p>
+                {>"ui/link" link=info_url classes="is-inline-block mt-2" /}
+            </div>
+        </div>
+    {/event.normalized.location}
+{/event.normalized.multiple_locations}
+
+{?event.normalized.multiple_locations}
     <div class="info-group mb-5 has-border-gray has-border-1 {template_classes.info_group|attr}">
         {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.location_title template_classes=template_classes.info_group_title icon="location" /}
 
         <div class="info-group__description has-text-small has-text-small pt-1 pr-8 pb-4 pl-9">
-            <div>{event.normalized.location.name|html}</div>
-            <div>{event.normalized.location.description|html}</div>
-            <div>{event.normalized.location.extra_info|html}</div>
-            {>"ui/link" link=event.normalized.location.info_url classes="is-inline-block mt-2" /}
+            {#event.normalized.multiple_locations}
+                <p class="mb-2 mt-0">{name|html}</p>
+            {/event.normalized.multiple_locations}
         </div>
     </div>
-{/event.normalized.location}
+{/event.normalized.multiple_locations}
 
 {?event.normalized.price}
     <div class="info-group mb-5 has-border-gray has-border-1 {template_classes.info_group|attr}">
@@ -62,12 +76,12 @@
 
         <div class="info-group__description has-text-small has-text-small pt-1 pr-8 pb-4 pl-9">
             {#event.normalized.price}
-                <div>
+                <p class="mb-0 mt-0">
                     {price|html}
-                </div>
-                <div>
+                </p>
+                <p class="mb-0 mt-0">
                     {description|kses}
-                </div>
+                </p>
                 {>"ui/link" link=info_url /}
             {/event.normalized.price}
         </div>
@@ -89,7 +103,7 @@
         {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.provider_title template_classes=template_classes.info_group_title icon="bullhorn" /}
 
         <div class="info-group__description has-text-small has-text-small pt-1 pr-8 pb-4 pl-9">
-            <div>{event.normalized.provider.name|html}</div>
+            <p class="mb-0 mt-0">{event.normalized.provider.name|html}</p>
 
             {?event.normalized.provider.email}
                 <div>
