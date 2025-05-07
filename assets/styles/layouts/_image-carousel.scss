@@ -12,7 +12,7 @@
             display: inline-block;
             overflow: hidden;
             max-width: 70vw;
-            
+
             img {
                 object-fit: contain;
                 clip-path: circle(closest-side);
@@ -40,7 +40,7 @@
 
         &.slick-arrow {
             background-color: transparent;
-            border:none;
+            border: none;
 
             .icon {
                 fill: $white;
@@ -64,7 +64,7 @@
                 right: 0;
             }
         }
-       
+
         .image-carousel__item {
             height: 80vh;
             display: flex !important;
@@ -77,33 +77,28 @@
                 width: auto;
             }
         }
-    
-        .img-wrapper{
-            flex:2 1 auto;
+
+        .img-wrapper {
+            flex: 2 1 auto;
             max-height: 100%;
-            height:auto;
+            height: auto;
             min-width: 0;
             min-height: 50%;
             display: flex;
             align-items: flex-end;
 
-            img{
+            img {
                 max-width: 100%;
-                max-height: 100% !important;
                 min-height: 100px;
                 object-fit: contain;
             }
         }
-    
+
         .image-block__meta {
-            flex:1 1 auto;
+            flex: 1 1 auto;
             width: 100%;
         }
-        
-
     }
-
-    
 }
 
 .slick-track .modal-trigger:focus {
