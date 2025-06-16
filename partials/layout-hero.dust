@@ -61,7 +61,7 @@
                         {/title}
 
                         {?description}
-                            <div class="h3 mb-6 has-text-secondary-invert keep-vertical-spacing">
+                            <div class="mb-6 has-text-secondary-invert keep-vertical-spacing">
                                 {description|kses}
                             </div>
                         {/description}
@@ -80,7 +80,7 @@
             {/before_main_content}
 
             {?columns}
-                <div class="columns is-centered is-multiline pr-6 pl-6 pr-9-desktop pl-9-desktop has-border-primary has-background-primary-invert has-border-1 ml-4-tablet mr-4-tablet ml-3 mr-3">
+                <div class="columns is-centered is-multiline pr-6 pl-6 pr-9-desktop pl-9-desktop has-background-primary has-border-primary has-border-1 ml-4-tablet mr-4-tablet ml-3 mr-3">
                     {#columns}
                         <div class="column is-6 is-4-desktop has-text-centered">
                             <div class="is-flex is-flex-direction-column has-height-100 p-6">
