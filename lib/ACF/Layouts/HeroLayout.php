@@ -48,6 +48,18 @@ class HeroLayout extends Layout {
                 'label'        => 'Kuva',
                 'instructions' => '',
             ],
+            'video'          => [
+                'label'        => 'Videotiedosto',
+                'instructions' => '',
+            ],
+            'video_caption'  => [
+                'label'        => 'Videon tekstivastine',
+                'instructions' => 'Tarkoitettu ruudunlukijoille, ei näytetä sivustolla.',
+            ],
+            'autoplay_video' => [
+                'label'        => 'Käynnistä video heti sivunlatauksessa',
+                'instructions' => '',
+            ],
             'title'         => [
                 'label'        => 'Otsikko',
                 'instructions' => '',
