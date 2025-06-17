@@ -6,7 +6,7 @@
     </div>
 
     {?video_file}
-        <div class="hero__background-container is-overlay is-clipped" {^autoplay_video}aria-hidden="true" tabindex="-1"{/autoplay_video}>
+        <div class="hero__background-container is-overlay is-clipped">
             <video src="{video_file.url|url}" class="hero__video {^autoplay_video}is-hidden{/autoplay_video}"
                 loop muted playsinline
                 {?video_caption}aria-describedby="video-caption"{/video_caption}
