@@ -1,9 +1,53 @@
-<section {?anchor}id="{anchor|s}"{/anchor}
-         class="hero has-background-secondary-dark-invert">
-    <div class="hero__background-container is-relative image has-width-100 {container_class|s}">
+<section {?anchor}id="{anchor|attr}"{/anchor}
+         class="hero has-background-secondary-dark-invert is-relative">
+    <div class="hero__background-container is-relative image has-width-100 {container_class|attr}">
         <div
             class="hero__background is-absolute has-top-0 has-bottom-0 has-right-0 has-left-0 has-background-cover" {@inlinebg id=image size="fullhd" /}></div>
     </div>
+
+    {?video_file}
+        <div class="hero__background-container is-overlay is-clipped">
+            <video src="{video_file.url|url}" class="hero__video {^autoplay_video}is-hidden{/autoplay_video}"
+                loop muted playsinline
+                {?video_caption}aria-describedby="video-caption"{/video_caption}
+                {?autoplay_video}autoplay{/autoplay_video}>
+            </video>
+
+            <button class="hero__control hero__control--play-large {?autoplay_video}is-hidden{/autoplay_video}" aria-label="{Strings.s.video.play|attr}">
+                {>"ui/icon" icon="play" class="icon--xxxlarge"  /}
+            </button>
+
+            <div class="hero__video-controls columns p-2 {^autoplay_video}is-hidden{/autoplay_video}">
+                <div class="column">
+                    <button class="hero__control--play mr-1" aria-label="{Strings.s.video.play|attr}">
+                        {>"ui/icon" icon="play" class="icon--large is-primary-invert"  /}
+                    </button>
+                    <button class="hero__control--pause mr-1" aria-label="{Strings.s.video.pause|attr}">
+                        {>"ui/icon" icon="pause" class="icon--large is-primary-invert"  /}
+                    </button>
+                    <button class="hero__control--stop mr-1" aria-label="{Strings.s.video.stop|attr}">
+                        {>"ui/icon" icon="stop" class="icon--large is-primary-invert"  /}
+                    </button>
+                </div>
+                <div class="column is-flex is-justify-content-end">
+                    <input id="hero-volume" class="hero__control--volume mr-1" type="range" min="0" max="100" step="1" value="0">
+                    <label class="is-sr-only" for="hero-volume">
+                        {Strings.s.video.volume|html}
+                    </label>
+                    <button class="hero__control--mute" type="button" data-state="mute" aria-label="{Strings.s.video.mute|attr}">
+                        {>"ui/icon" icon="volume" class="icon--large hero__volume is-hidden is-primary-invert"  /}
+                        {>"ui/icon" icon="volume-none" class="icon--large hero__volume-none is-primary-invert"  /}
+                    </button>
+                </div>
+            </div>
+
+            {?video_caption}
+                <div id="video-caption" class="is-sr-only">
+                    {video_caption|html}
+                </div>
+            {/video_caption}
+        </div>
+    {/video_file}
 
     <div class="hero__inner">
         <div class="container">
@@ -12,13 +56,13 @@
                     <div class="is-center p-8 pr-8-tablet pl-8-tablet pr-2 pl-2 has-text-centered">
                         {?title}
                             <h1 class="h1 mt-0 mr-auto mb-5 ml-auto no-hyphens has-text-secondary-invert">
-                                {title|s}
+                                {title|html}
                             </h1>
                         {/title}
 
                         {?description}
                             <div class="mb-6 has-text-secondary-invert keep-vertical-spacing">
-                                {description|s}
+                                {description|kses}
                             </div>
                         {/description}
 
@@ -32,7 +76,7 @@
             </div>
 
             {?before_main_content}
-                {before_main_content|s}
+                {before_main_content|kses}
             {/before_main_content}
 
             {?columns}
@@ -41,10 +85,10 @@
                         <div class="column is-6 is-4-desktop has-text-centered">
                             <div class="is-flex is-flex-direction-column has-height-100 p-6">
                                 <p class="h3 mt-0 mb-3">
-                                    {title|s}
+                                    {title|html}
                                 </p>
 
-                                <p class="mt-0 mb-0 has-text-large">{text|s}</p>
+                                <p class="mt-0 mb-0 has-text-large">{text|kses}</p>
 
                                 {?logo}
                                     <div class="image-container">
@@ -64,7 +108,7 @@
             {/columns}
 
             {?after_main_content}
-                {after_main_content|s}
+                {after_main_content|kses}
             {/after_main_content}
         </div>
     </div>
