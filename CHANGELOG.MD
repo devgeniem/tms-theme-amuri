@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.4.0] - 2025-06-23
+
 - TMS-1172: Add video-fields and functionality to hero-component
 
 ## [1.3.6] - 2025-04-30
