@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-1021: Remove image carousel modal max-height
 - TMS-1062: Increase menu-dropdown button size
+- TMS-1160: Fix elements focus outline thickness
+
+## [1.4.0] - 2025-06-23
+
 - TMS-1172: Add video-fields and functionality to hero-component
 
 ## [1.3.6] - 2025-04-30

@@ -22,8 +22,8 @@
 
 table.idc-element {
     &:focus {
-        outline: 0.125rem dotted #000;
-        outline-offset: -0.125rem;
+        outline: .2rem dotted #000;
+        outline-offset: -.2rem;
         position: relative;
     }
 }
