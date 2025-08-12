@@ -19,7 +19,7 @@ $button-secondary-border-color: $button-primary-border-color;
     &.is-hovered,
     &:focus,
     &.is-focused {
-        box-shadow: 0 .125rem .375rem rgba(0, 0, 0, .15);
+        box-shadow: 0 .15rem .375rem rgba(0, 0, 0, .15);
         background-color: $primary !important;
         color: $primary-invert !important;
         border-color: $primary-invert !important;
@@ -44,7 +44,7 @@ $button-secondary-border-color: $button-primary-border-color;
     &:focus,
     &.is-focused {
         border-color: $button-primary-border-color !important;
-        outline: .125rem dotted $black !important;
+        outline: .15rem dotted $black !important;
         outline-offset: .25rem !important;
     }
 

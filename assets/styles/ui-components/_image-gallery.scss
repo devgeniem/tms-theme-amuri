@@ -9,7 +9,7 @@
 
         &:focus {
             outline-offset: 0.25rem !important;
-            outline: .125rem dotted $white !important;
+            outline: .15rem dotted $white !important;
         }
 
         .icon {
@@ -71,6 +71,6 @@
     }
 
     &:focus {
-        outline: .125rem dotted $white !important;
+        outline: .15rem dotted $white !important;
     }
 }

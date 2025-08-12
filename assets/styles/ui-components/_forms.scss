@@ -112,7 +112,7 @@ select {
     align-items: center;
     justify-content: space-between;
     background: none;
-    border: 0.125rem dashed $black;
+    border: .2rem dashed $black;
 }
 
 .gform_button_select_files,
@@ -123,7 +123,7 @@ select {
         border-color: $primary-invert !important;
         background-color: $primary !important;
         color: $primary-invert !important;
-        outline: 0.125rem dotted $black !important;
+        outline: .2rem dotted $black !important;
         outline-offset: 0.25rem !important;
     }
 }
