@@ -5,7 +5,7 @@
 .bulmally-navbar {
     .dropdown-toggler {
         &:focus {
-            outline-color: $white !important;
+            outline-color: currentColor !important;
         }
     }
 }
