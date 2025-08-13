@@ -6,11 +6,11 @@
     {#results.posts}
         <div class="search-item mb-6 p-6 p-8-desktop has-border-1 has-border-gray {template_classes.search_item|s}">
             <div class="search-item__inner">
-                {?breadcrumbs}
-                    <div class="search-item__meta-container">
-                        {>"breadcrumbs" /}
-                    </div>
-                {/breadcrumbs}
+                <h2 class="h4 mt-4 mb-0 search-item__title">
+                    <a href="{permalink}" class="">
+                        {post_title|s}
+                    </a>
+                </h2>
 
                 {?meta}
                     <div class="search-item__meta-container has-text-primary is-uppercase has-text-weight-medium">
@@ -18,17 +18,17 @@
                     </div>
                 {/meta}
 
-                <h2 class="h4 mt-4 mb-0 search-item__title">
-                    <a href="{permalink}" class="">
-                        {post_title|s}
-                    </a>
-                </h2>
-
                 {?post_excerpt}
                     <p class="mt-4 mb-0 {template_classes.search_item_excerpt|s}">
                         {post_excerpt|s}
                     </p>
                 {/post_excerpt}
+
+                {?breadcrumbs}
+                    <div class="search-item__meta-container">
+                        {>"search-result-breadcrumbs" /}
+                    </div>
+                {/breadcrumbs}
             </div>
         </div>
     {/results.posts}
