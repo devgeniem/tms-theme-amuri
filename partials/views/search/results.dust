@@ -13,7 +13,7 @@
                 </h2>
 
                 {?meta}
-                    <div class="search-item__meta-container is-uppercase has-text-weight-medium">
+                    <div class="search-item__meta-container is-uppercase has-text-weight-medium mt-4">
                         {>"views/search/search-item-meta"  /}
                     </div>
                 {/meta}
