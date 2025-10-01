@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1201: Add iframe-field for video fields
+
 ## [1.4.2] - 2025-09-08
 
 - TMS-1163: Search results breadcrumbs accessibility fixes
