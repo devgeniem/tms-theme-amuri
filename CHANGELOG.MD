@@ -9,8 +9,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-1021: Remove image carousel modal max-height
 - TMS-1062: Increase menu-dropdown button size
-- TMS-1160: Fix elements focus outline thickness
+- TMS-1201: Add iframe-field for video fields
+
+## [1.4.2] - 2025-09-08
+
 - TMS-1163: Search results breadcrumbs accessibility fixes
+
+## [1.4.1] - 2025-08-13
+
+- TMS-1160: Fix elements focus outline thickness
 
 ## [1.4.0] - 2025-06-23
 
