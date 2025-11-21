@@ -46,40 +46,52 @@ $button-secondary-border-color: $button-primary-border-color;
     }
 
     &.is-primary {
-        background-color: $primary !important;
-        color: $primary-invert !important;
-        border-color: $primary-invert !important;
+        &,
+        &:active,
+        &.is-active {
+            background-color: $primary !important;
+            color: $primary-invert !important;
+            border-color: $primary-invert !important;
 
-        &.is-outlined {
-            &:hover,
-            &:focus {
-                border-color: $primary-invert !important;
+            &.is-outlined {
+                &:hover,
+                &:focus {
+                    border-color: $primary-invert !important;
+                }
             }
-        }
 
-        .icon {
-            fill: $primary-invert !important;
+            .icon {
+                fill: $primary-invert !important;
+            }
         }
     }
 
     &.is-primary.is-inverted,
     &.is-primary-invert {
-        border-color: $primary !important;
-        background-color: $primary-invert !important;
-        color: $primary !important;
+        &,
+        &:active,
+        &.is-active {
+            border-color: $primary !important;
+            background-color: $primary-invert !important;
+            color: $primary !important;
 
-        .icon {
-            fill: currentColor !important;
-            color: inherit;
+            .icon {
+                fill: currentColor !important;
+                color: inherit;
+            }
         }
     }
 
     &.is-secondary {
-        background-color: $primary-invert !important;
-        color: $primary !important;
+        &,
+        &:active,
+        &.is-active {
+            background-color: $primary-invert !important;
+            color: $primary !important;
 
-        .icon {
-            fill: currentColor !important;
+            .icon {
+                fill: currentColor !important;
+            }
         }
     }
 
