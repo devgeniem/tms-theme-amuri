@@ -53,13 +53,6 @@ $button-secondary-border-color: $button-primary-border-color;
             color: $primary-invert !important;
             border-color: $primary-invert !important;
 
-            &.is-outlined {
-                &:hover,
-                &:focus {
-                    border-color: $primary-invert !important;
-                }
-            }
-
             .icon {
                 fill: $primary-invert !important;
             }

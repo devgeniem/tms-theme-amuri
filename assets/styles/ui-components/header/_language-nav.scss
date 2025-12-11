@@ -36,15 +36,16 @@
     &--horizontal {
         a {
             border-color: $primary-invert !important;
-            color: $primary !important;
-            background-color: $primary-invert !important;
+            color: $primary-invert !important;
+            background-color: $primary !important;
 
-            &.has-text-primary {
+            &.has-background-primary {
+                background-color: $primary-invert !important;
                 color: $primary !important;
             }
 
-            &:hover {
-                background-color: $link-hover !important;
+            &.has-text-primary {
+                color: $primary-invert !important;
             }
 
             &:focus {
