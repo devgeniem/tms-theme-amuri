@@ -47,6 +47,8 @@ $button-secondary-border-color: $button-primary-border-color;
 
     &.is-primary {
         &,
+        &:hover,
+        &:focus,
         &:active,
         &.is-active {
             background-color: $primary !important;
@@ -62,6 +64,8 @@ $button-secondary-border-color: $button-primary-border-color;
     &.is-primary.is-inverted,
     &.is-primary-invert {
         &,
+        &:hover,
+        &:focus,
         &:active,
         &.is-active {
             border-color: $primary !important;
@@ -77,6 +81,8 @@ $button-secondary-border-color: $button-primary-border-color;
 
     &.is-secondary {
         &,
+        &:hover,
+        &:focus,
         &:active,
         &.is-active {
             background-color: $primary-invert !important;
