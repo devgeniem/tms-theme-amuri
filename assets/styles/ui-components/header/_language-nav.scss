@@ -5,15 +5,6 @@
         border: 1px solid $primary-invert;
     }
 
-    .dropdown {
-        &.is-active {
-            .button {
-                color: $primary !important;
-                background-color: $primary-invert !important;
-            }
-        }
-    }
-
     .dropdown-trigger {
         .button {
             padding: .25rem 1.25rem !important;
@@ -45,15 +36,16 @@
     &--horizontal {
         a {
             border-color: $primary-invert !important;
-            color: $primary !important;
-            background-color: $primary-invert !important;
+            color: $primary-invert !important;
+            background-color: $primary !important;
 
-            &.has-text-primary {
+            &.has-background-primary {
+                background-color: $primary-invert !important;
                 color: $primary !important;
             }
 
-            &:hover {
-                background-color: $link-hover !important;
+            &.has-text-primary {
+                color: $primary-invert !important;
             }
 
             &:focus {

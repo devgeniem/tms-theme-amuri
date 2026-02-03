@@ -30,12 +30,6 @@
     #js-search-toggle {
         margin-right: $theme-spacing-oneandhalf !important;
         margin-left: $theme-spacing-oneandhalf !important;
-
-        &:hover,
-        &:focus {
-            background-color: $link-hover !important;
-            color: $primary !important;
-        }
     }
 
     &__popup {

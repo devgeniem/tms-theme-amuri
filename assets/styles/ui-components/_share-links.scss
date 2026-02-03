@@ -6,27 +6,20 @@
     }
 
     a {
-        background-color: $primary-invert;
-        border: 1px solid $primary-invert;
+        &,
+        &.has-background-accent {
+            &,
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: $primary-invert !important;
+                border: 1px solid $primary-invert !important;
 
-        .icon {
-            fill: $primary !important;
-        }
-
-        &:hover,
-        &.is-hovered,
-        &:focus,
-        &.is-focused {
-            background-color: $primary !important;
-
-            .icon {
-                fill: $primary-invert !important;
+                .icon {
+                    fill: $primary !important;
+                }
             }
         }
-    }
-
-    .icon {
-        fill: $link !important;
     }
 }
 
