@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-1021: Remove image carousel modal max-height
 - TMS-1062: Increase menu-dropdown button size
+- TMS-1164: Fix site header notice button hover
+
+## [1.6.0] - 2026-02-03
+
 - TMS-1164: Remove color changing for button hover-styles
 
 ## [1.5.0] - 2025-10-01

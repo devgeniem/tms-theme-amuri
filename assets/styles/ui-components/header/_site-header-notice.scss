@@ -8,10 +8,5 @@
                 border-color: $white !important;
             }
         }
-
-        &:focus,
-        .is-focus {
-            outline: .15rem dotted $white !important;
-        }
     }
 }
