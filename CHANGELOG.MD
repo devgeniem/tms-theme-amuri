@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1164: Fix site header notice button hover
+
 ## [1.6.0] - 2026-02-03
 
 - TMS-1164: Remove color changing for button hover-styles
