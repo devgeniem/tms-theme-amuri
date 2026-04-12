@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1260: Add sr-only text for opening image-blocks modal
+
 ## [1.6.1] - 2026-02-15
 
 - TMS-1164: Fix site header notice button hover
