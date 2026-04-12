@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.6.2] - 2026-04-12
+
 - TMS-1260: Add sr-only text for opening image-blocks modal
 
 ## [1.6.1] - 2026-02-15
