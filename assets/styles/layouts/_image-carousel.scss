@@ -88,7 +88,7 @@
             align-items: flex-end;
 
             img {
-                max-width: 100%;
+                max-width: 100% !important;
                 min-height: 100px;
                 object-fit: contain;
             }
