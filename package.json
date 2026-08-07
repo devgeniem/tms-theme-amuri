@@ -60,6 +60,10 @@
     "dev": "cross-env webpack --progress --mode development",
     "build": "cross-env NODE_ENV=production webpack --progress --mode production"
   },
+  "overrides": {
+    "postcss": "8.5.26",
+    "nanoid": "3.3.17"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
